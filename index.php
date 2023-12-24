@@ -9,7 +9,7 @@ include("config.php");
 <html lang="en">
 
 <head>
-<!-- FOR MORE PROJECTS visit: codeastro.com -->
+
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,16 +30,6 @@ include("config.php");
 </head>
 <body>
 
-<!--	Page Loader  -->
-<!--<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>  -->
-<!--	Page Loader  -->
-
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
@@ -50,192 +40,33 @@ include("config.php");
         <section class="banner text-gray-600 body-font" style="background: #6366F1; color: #fff">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-12">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white" style="font-weight: 700; font-size: 2.5em">Search Your Project </h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis iusto placeat corrupti eaque esse sunt consequatur doloribus dolores. Vero obcaecati aspernatur aliquid ullam dolores fugit sapiente, explicabo et sint, aut delectus sunt?</p>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white" style="font-weight: 700; font-size: 2.5em">Search Your Project 😀</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Unlocking Innovation, One Line of Code at a Time – Your Gateway to Next-Gen Solutions!</p>
     </div>
-    <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+
+    <form name="search" action="projects.php" class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
       <div class="relative flex-grow w-full">
-        <select style="height:42px" id="full-name" name="technologyy" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        <select style="height:42px" id="full-name" name="technology" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
           <option style="color: #000" value="">Select Technology</option>
-          <option style="color: #000" value="cse">Computer Science</option>
+          <option style="color: #000" value="Computer Science">Computer Science</option>
         </select>
       </div>
       <div class="relative flex-grow w-full">
-        <input type="text" id="email" name="keyword" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        <input type="search" id="email" name="search" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
       </div>
-      <button class="text-white bg-indigo-500 border-2 border-white py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Search</button>
-    </div>
+      <button type="submit" class="text-white bg-indigo-500 border-2 border-white py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Search</button>
+</form>
+
   </div>
 </section>
         <!-- banner end -->
 
         <!-- project catgory start  -->
-        <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">PROJECT CATEGORIES</h1>
-      <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table.</p>
-    </div>
-    <div class="flex flex-wrap -m-4">
-      <div class="xl:w-1/3 md:w-1/2 p-4">
-        <div class="border border-gray-200 p-6 rounded-lg">
-          <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
-          </div>
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Computer Science</h2>
-          <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-        </div>
-      </div>
-      <div class="xl:w-1/3 md:w-1/2 p-4">
-        <div class="border border-gray-200 p-6 rounded-lg">
-          <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
-          </div>
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Machine Learning</h2>
-          <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-        </div>
-      </div>
-      <div class="xl:w-1/3 md:w-1/2 p-4">
-        <div class="border border-gray-200 p-6 rounded-lg">
-          <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
-          </div>
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Block Chain</h2>
-          <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-        </div>
-      </div>
-      <div class="xl:w-1/3 md:w-1/2 p-4">
-        <div class="border border-gray-200 p-6 rounded-lg">
-          <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
-          </div>
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Web Development</h2>
-          <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-        </div>
-      </div>
-      <div class="xl:w-1/3 md:w-1/2 p-4">
-        <div class="border border-gray-200 p-6 rounded-lg">
-          <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
-          </div>
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Artificial intelligence</h2>
-          <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-        </div>
-      </div>
-      <div class="xl:w-1/3 md:w-1/2 p-4">
-        <div class="border border-gray-200 p-6 rounded-lg">
-          <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
-          </div>
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Android</h2>
-          <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <?php include("include/catagory.php");?>
         <!-- project catgory end -->
 
         <!-- recent project  -->
-        <section class="text-gray-600 body-font">
-          <h1 align="center" class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style="font-size: 2em">RECENT PROJECT</h1>
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -m-4">
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/banner/tu.png">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-          <p class="mt-1">$16.00</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/banner/tu.png">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-          <p class="mt-1">$21.15</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/banner/tu.png">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-          <p class="mt-1">$12.00</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/banner/tu.png">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-          <p class="mt-1">$18.40</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/banner/tu.png">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-          <p class="mt-1">$16.00</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/banner/tu.png">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-          <p class="mt-1">$21.15</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/banner/tu.png">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-          <p class="mt-1">$12.00</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/banner/tu.png">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-          <p class="mt-1">$18.40</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+       <?php include("include/recentproject.php");?>
         <!-- recent project  -->
 
     <!-- statisc start  -->
@@ -311,8 +142,7 @@ include("config.php");
       </div>
     </div>
     <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-      <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
-      <p class="leading-relaxed mb-5 text-gray-600">Post-ironic portland shabby chic echo park, banjo fashion axe</p>
+      <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Contact & Feedback</h2>
       <div class="relative mb-4">
         <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
         <input type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
