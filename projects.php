@@ -85,6 +85,9 @@ $result=($page-1)*$post_per_page;
   </div>
 </section>
 
+          <!-- pages section start  -->
+          <?php include("include/pages.php");?>
+          <!-- pages section end  -->
 
     <!--	Footer   start-->
 		<?php include("include/footer.php");?>
