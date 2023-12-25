@@ -3,7 +3,15 @@ ini_set('session.cache_limiter','public');
 session_cache_limiter(false);
 session_start();
 include("config.php");
-								
+if(isset($_GET['page'])){
+  $page=$_GET['page'];
+}else{
+  $page=1;
+}
+
+$post_per_page=6;
+$result=($page-1)*$post_per_page;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +48,7 @@ include("config.php");
     <!-- search end -->
 
 <section style="margin-top: 20px" class="text-gray-600 body-font">
-          <h1 align="center" class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style="font-size: 2em"><?php echo $search=$_REQUEST['search'];?> related projects</h1>
+          <h1 align="center" class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style="font-size: 2em"><span class="uppercase" style="color: #6366F1; font-weight: bold;"><?php echo $search=$_REQUEST['search'];?></span> RELATED PROJECTS</h1>
           <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap -m-4 justify-center">
     <?php 
@@ -56,12 +64,15 @@ include("config.php");
          while($row=mysqli_fetch_assoc($query))
          {
              ?>
-      <div class="lg:w-1/4 md:w-1/2 p-0 w-full shadow-lg m-3 mt-4">
+      <div class="lg:w-1/4 md:w-1/2 p-0 w-full shadow-lg m-3 mt-4 rounded-lg">
         <a class="block relative h-48 rounded overflow-hidden">
           <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="images/banner/<?php echo $row['image'];?>">
         </a>
         <div class="mt-4 p-3">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><?php echo $row['pid'];?></h3>
+        <div class="flex flex-row justify-between">
+            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><?php echo $row['cid'];?></h3>
+            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Posted on <?php echo date('F jS, Y',strtotime($row['date']));?></h3>
+          </div>
           <h2 class="text-gray-900 title-font text-lg font-medium"><?php echo $row['title'];?></h2>
           <div class="flex flex-row justify-between">
             <p class="mt-1">Rs: <?php echo $row['price'];?></p>
@@ -73,6 +84,8 @@ include("config.php");
     </div>
   </div>
 </section>
+
+
     <!--	Footer   start-->
 		<?php include("include/footer.php");?>
 		<!--	Footer   start-->
