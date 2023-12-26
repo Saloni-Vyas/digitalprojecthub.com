@@ -7,7 +7,7 @@
       <span class="ml-3 text-xl" style="color: #fff;font-weight: bold;">DPH</span>
     </a>
     <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-      <a href="/" class="mr-5 hover:text-gray-900">Home</a>
+      <a href="#" class="mr-5 hover:text-gray-900">Home</a>
       <a class="mr-5 hover:text-gray-900">About</a>
       <a href="#contact" class="mr-5 hover:text-gray-900">Contact</a>
       <a href="/courses/projects.php" class="mr-5 hover:text-gray-900">Projects</a>

@@ -31,7 +31,7 @@ $result=($page-1)*$post_per_page;
 <!--	Css Link
 	========================================================-->
 <link rel="stylesheet" type="text/css" href="css/style.css">
-
+<script src="https://cdn.tailwindcss.com"></script>
 <!--	Title
 	=========================================================-->
 <title>DigitalProjectHub.com</title>
@@ -56,10 +56,10 @@ $result=($page-1)*$post_per_page;
     if(isset($_REQUEST['search'])){
         $techology = $_REQUEST['technology'];
         $search = $_REQUEST['search'];
-        $query=mysqli_query($con,"SELECT * FROM project WHERE title LIKE '%$search%'");
+        $query=mysqli_query($con,"SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND title LIKE '%$search%' LIMIT 6");
     }else{
 
-        $query=mysqli_query($con,"SELECT * FROM project");
+        $query=mysqli_query($con,"SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid LIMIT 6");
     }
          while($row=mysqli_fetch_assoc($query))
          {
@@ -70,7 +70,7 @@ $result=($page-1)*$post_per_page;
         </a>
         <div class="mt-4 p-3">
         <div class="flex flex-row justify-between">
-            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><?php echo $row['cid'];?></h3>
+            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><?php echo $row['cname'];?></h3>
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Posted on <?php echo date('F jS, Y',strtotime($row['date']));?></h3>
           </div>
           <h2 class="text-gray-900 title-font text-lg font-medium"><?php echo $row['title'];?></h2>
@@ -100,6 +100,6 @@ $result=($page-1)*$post_per_page;
     </div>
 </div>
 <script src="js/custom.js"></script>
-<script src="https://cdn.tailwindcss.com"></script>
+
 </body>
 </html>

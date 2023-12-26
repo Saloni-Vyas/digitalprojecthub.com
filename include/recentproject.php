@@ -3,7 +3,8 @@
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap -m-4 justify-center">
     <?php 
-         $query=mysqli_query($con,"SELECT * FROM project LIMIT 6");
+    
+         $query=mysqli_query($con,"SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid LIMIT 6");
          while($row=mysqli_fetch_assoc($query))
          {
              ?>
@@ -13,7 +14,7 @@
         </a>
         <div class="mt-4 p-3">
           <div class="flex flex-row justify-between">
-            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><?php echo $row['cid'];?></h3>
+            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><?php echo $row['cname'];?></h3>
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Posted on <?php echo date('F jS, Y',strtotime($row['date']));?></h3>
           </div>
           <h2 class="text-gray-900 title-font text-lg font-medium"><?php echo $row['title'];?></h2>
