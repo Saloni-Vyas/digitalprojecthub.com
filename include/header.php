@@ -1,7 +1,8 @@
 <header class="text-gray-600 body-font">
 <div class="relative w-full bg-white">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
-    <div class="inline-flex items-center space-x-2">
+ 
+  <div class="inline-flex items-center space-x-2">
       <span>
         <svg
           width="30"
@@ -16,8 +17,13 @@
           ></path>
         </svg>
       </span>
-      <span class="font-bold">DPH</span>
+      <a
+            href="/digitalprojecthub.com/"
+            class="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
+          >
+      <span class="font-bold">DigitalProjectHub</span>
     </div>
+  </a>
     <div class="hidden grow items-start justify-end lg:flex">
       <ul class="ml-12 inline-flex space-x-8">
         <li>

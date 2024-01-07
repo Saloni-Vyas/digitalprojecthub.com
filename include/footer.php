@@ -17,14 +17,18 @@
                 fill="black"
               ></path>
             </svg>
-            <span class="ml-4 text-lg font-bold">DevUI</span>
+            <a
+            href="/digitalprojecthub.com/"
+            class="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
+          >
+            <span class="ml-4 text-lg font-bold">DigitalProjectHub</span></a>
           </div>
           <div>
             <p class="mb-4  text-base font-medium">
-              The Tailwind CSS Component library
+              <!-- The Tailwind CSS Component library -->
             </p>
             <p class="text-sm text-gray-600">
-              © Copyright <?php echo date("Y"); ?>. All Rights Reserved by DevUI.
+              © Copyright <?php echo date("Y"); ?>. All Rights Reserved by DigitalProjectHub.
             </p>
           </div>
         </div>

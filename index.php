@@ -19,14 +19,14 @@ include("config.php");
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" href="images/favicon.ico">
 
+<title>DigitalProjectHub.com</title>
 
 <!--	Css Link
 	========================================================-->
-<link rel="stylesheet" href="css/style.css">
-<script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 <!--	Title
 	=========================================================-->
-<title>DigitalProjectHub.com</title>
 </head>
 <body>
 

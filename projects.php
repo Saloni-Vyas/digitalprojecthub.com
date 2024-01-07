@@ -27,14 +27,14 @@ $result=($page-1)*$post_per_page;
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" href="images/favicon.ico">
 
+<title>DigitalProjectHub.com</title>
 
 <!--	Css Link
 	========================================================-->
-<link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 <script src="https://cdn.tailwindcss.com"></script>
 <!--	Title
 	=========================================================-->
-<title>DigitalProjectHub.com</title>
 </head>
 <body>
 <div id="page-wrapper">
@@ -49,8 +49,8 @@ $result=($page-1)*$post_per_page;
 
 <section class="text-gray-600 body-font">
 
-          <h5 class="mt-20 pb-20 text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl"><?php echo $search=$_REQUEST['search'];?> <span style="color: rgb(161,54,130);
-color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">Realated Projects</span></h5>
+          <h5 class="mt-20 pb-20 text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl"><?php echo $search=$_REQUEST['search'];?> Realated <span style="color: rgb(161,54,130);
+color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">Projects</span></h5>
           <div class="container px-5 py-7 mx-auto">
     <div class="flex flex-wrap -m-4 justify-center">
     <?php 
@@ -80,7 +80,7 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">R
           <div class="flex flex-row justify-end">
           <button
                   type="button"
-                  class="inline-flex items-center justify-center rounded-md bg-black mx-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                  class="inline-flex items-center justify-center rounded-md bg-green-500 mx-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                 >
 
                   
