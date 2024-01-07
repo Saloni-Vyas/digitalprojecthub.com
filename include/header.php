@@ -1,4 +1,4 @@
-<header class="text-gray-600 body-font" style="background: #6366f1; color: #fff">
+<header class="text-gray-600 body-font">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
@@ -7,10 +7,10 @@
       <span class="ml-3 text-xl" style="color: #fff;font-weight: bold;">DPH</span>
     </a>
     <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-      <a href="#" class="mr-5 hover:text-gray-900">Home</a>
-      <a class="mr-5 hover:text-gray-900">About</a>
-      <a href="#contact" class="mr-5 hover:text-gray-900">Contact</a>
-      <a href="/courses/projects.php" class="mr-5 hover:text-gray-900">Projects</a>
+      <a href="/digitalprojecthub.com/" class="mr-5 hover:text-gray-900">Home</a>
+      <a href="/digitalprojecthub.com/#about" class="mr-5 hover:text-gray-900">About</a>
+      <a href="/digitalprojecthub.com/#contact" class="mr-5 hover:text-gray-900">Contact</a>
+      <a href="/digitalprojecthub.com/projects.php?technology=&search=" class="mr-5 hover:text-gray-900">Projects</a>
     </nav>
     <button style="color: #000" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Login
       <!-- <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">

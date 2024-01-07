@@ -49,7 +49,7 @@ $result=($page-1)*$post_per_page;
 
 <section style="margin-top: 20px" class="text-gray-600 body-font">
           <h1 align="center" class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style="font-size: 2em"><span class="uppercase" style="color: #6366F1; font-weight: bold;"><?php echo $search=$_REQUEST['search'];?></span> RELATED PROJECTS</h1>
-          <div class="container px-5 py-24 mx-auto">
+          <div class="container px-5 py-7 mx-auto">
     <div class="flex flex-wrap -m-4 justify-center">
     <?php 
 
