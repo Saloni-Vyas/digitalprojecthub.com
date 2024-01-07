@@ -40,6 +40,8 @@ $row=mysqli_fetch_assoc($query);?>
                   src="images/banner/<?php echo $row['image'];?>"
                   width="650"
                   height="590"
+                  decoding="async"
+                  loading="lazy"
                   class="rounded-lg object-cover md:h-[300px] md:w-full lg:h-full"
                 />
               </div>
@@ -188,11 +190,14 @@ $row=mysqli_fetch_assoc($query);?>
               Product Details:
             </h3>
             <p class="text-sm">
-            <?php echo $row['content'];?>
+            <?php echo $row['description'];?>
             </p>
           </div>
         </div>
       </div>
+      <hr class="m-10">
+      <?php echo $row['content'];?>
+
     </div>
   </div>
 </div>

@@ -102,6 +102,9 @@ include("config.php");
 </section>
     <!-- statisc end  -->
 
+    <!-- team start -->
+   <?php include("include/team.php");?>
+    <!-- team start end -->
 
 <!-- contact start -->
 <section id="contact" class="text-gray-600 body-font relative">
