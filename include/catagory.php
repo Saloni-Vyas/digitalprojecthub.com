@@ -1,30 +1,37 @@
 <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">PROJECT CATEGORIES</h1>
-      <!-- <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table.</p> -->
-    </div>
-    <div class="flex flex-wrap -m-4">
 
-        <?php 
-         $query=mysqli_query($con,"SELECT * FROM category");
-         while($row=mysqli_fetch_assoc($query))
-         {
-             ?>
-             <div class="xl:w-1/3 md:w-1/2 p-4">
-        <div class="border border-gray-200 p-6 rounded-lg">
-          <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+
+  <div class="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-xl text-center">
+      <h2 class="mt-6 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+        DPH helps you build beautiful <span style="color: rgb(161,54,130);
+color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">projects</span>
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-gray-600">
+        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+        Velit officia consequat duis enim velit mollit.
+      </p>
+    </div>
+    <div class="mt-12 grid grid-cols-1 gap-y-8 text-center sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
+      <?php
+      $query = mysqli_query($con, "SELECT * FROM category");
+      while ($row = mysqli_fetch_assoc($query)) {
+      ?>
+        <div>
+          <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-9 w-9 text-gray-700">
+              <line x1="12" y1="2" x2="12" y2="22"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
             </svg>
           </div>
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2"><?php echo $row["cname"];?></h2>
-          <p class="leading-relaxed text-base"><?php echo $row['description'];?></p>
+          <h3 class="mt-8 text-lg font-semibold text-black"><?php echo $row["cname"]; ?></h3>
+          <p class="mt-4 text-sm text-gray-600">
+            <?php echo $row["description"]; ?>
+          </p>
         </div>
+      <?php } ?>
+      <div>
       </div>
-
-         <?php } ?>
-
     </div>
   </div>
 </section>

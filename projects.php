@@ -47,8 +47,10 @@ $result=($page-1)*$post_per_page;
 		<?php include("include/search.php");?>
     <!-- search end -->
 
-<section style="margin-top: 20px" class="text-gray-600 body-font">
-          <h1 align="center" class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style="font-size: 2em"><span class="uppercase" style="color: #6366F1; font-weight: bold;"><?php echo $search=$_REQUEST['search'];?></span> RELATED PROJECTS</h1>
+<section class="text-gray-600 body-font">
+
+          <h5 class="mt-20 pb-20 text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl"><?php echo $search=$_REQUEST['search'];?> <span style="color: rgb(161,54,130);
+color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">Realated Projects</span></h5>
           <div class="container px-5 py-7 mx-auto">
     <div class="flex flex-wrap -m-4 justify-center">
     <?php 
@@ -65,21 +67,34 @@ $result=($page-1)*$post_per_page;
          {
              ?>
       <div class="lg:w-1/4 md:w-1/2 p-0 w-full shadow-lg m-3 mt-4 rounded-lg">
-        <a href="project.php?pid=<?php echo $row['pid'];?>" class="block relative h-48 rounded overflow-hidden">
+        <a href="project.php?pid=<?php echo $row['pid'];?>" class="block relative rounded overflow-hidden">
           <img alt="ecommerce" class="object-cover object-center w-full h-full block" decoding="async"
                   loading="lazy" src="images/banner/<?php echo $row['image'];?>">
-        </a>
+       
         <div class="mt-4 p-3">
         <div class="flex flex-row justify-between">
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><?php echo $row['cname'];?></h3>
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Posted on <?php echo date('F jS, Y',strtotime($row['date']));?></h3>
           </div>
           <h2 class="text-gray-900 title-font text-lg font-medium"><?php echo $row['title'];?></h2>
-          <div class="flex flex-row justify-between">
-            <p class="mt-1">Rs: <?php echo $row['price'];?></p>
-            <Button class="rounded-sm" style="color: #fff;background: #6366F1; padding: 1px 20px;">Buy</Button>
+          <div class="flex flex-row justify-end">
+          <button
+                  type="button"
+                  class="inline-flex items-center justify-center rounded-md bg-black mx-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                >
+
+                  
+                  <span class="block">Rs: <?php echo $row['price'];?></span>
+                </button>
+            <button
+                  type="button"
+                  class="inline-flex items-center justify-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                >
+                  <span class="block">View</span>
+                </button>
           </div>
         </div>
+        </a>
       </div>
       <?php }?>
     </div>

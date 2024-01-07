@@ -201,7 +201,6 @@ $row=mysqli_fetch_assoc($query);?>
     </div>
   </div>
 </div>
-<hr>
 				
         <!--	Footer   start-->
 		<?php include("include/footer.php");?>
