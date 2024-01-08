@@ -24,14 +24,12 @@ include("include/post.php");
   <!-- search start  -->
   <?php include("include/search.php"); ?>
   <!-- search end -->
+
   <div class="sp mx-auto max-w-7xl px-2 py-10 lg:px-0">
     <div class="overflow-hidden">
-
-
       <div class="mb-9 pt-4 md:px-6 md:pt-7 lg:mb-2 lg:p-8 2xl:p-10 2xl:pt-10">
         <?php
         $pid = $_GET['pid'];
-
         $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND pid=$pid");
         $row = mysqli_fetch_assoc($query); ?>
         <nav class="flex mb-5" aria-label="Breadcrumb">
@@ -90,7 +88,7 @@ include("include/post.php");
                 <div class="relative flex items-center justify-center">
                   <img alt="Product gallery 1" src="images/banner/tu1.png" width="650" height="590" decoding="async" loading="lazy" class="rounded-lg object-cover md:h-[300px] md:w-full lg:h-full" />
                 </div>
-                <div class="absolute top-2/4 z-10 flex w-full items-center justify-between">
+                <div class="absolute px-2 top-2/4 z-10 flex w-full items-center justify-between">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
                     <polyline points="15 18 9 12 15 6"></polyline>
                   </svg>
@@ -99,17 +97,17 @@ include("include/post.php");
                   </svg>
                 </div>
               </div>
-              <div class="flex gap-2 xl:flex-col">
+              <!-- <div class="flex gap-2 xl:flex-col">
                 <div class="border-border-base flex cursor-pointer items-center justify-center overflow-hidden rounded border transition hover:opacity-75 ">
                   <img alt="Product 0" src="images/banner/tu1.png" decoding="async" loading="lazy" class="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32" />
                 </div>
                 <div class="border-border-base flex cursor-pointer items-center justify-center overflow-hidden rounded border transition hover:opacity-75 ">
-                  <img alt="Product 1" src="images/banner/<?php echo $row['image']; ?>" decoding="async" loading="lazy" class="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32" />
+                  <img alt="Product 1" src="images/banner/" decoding="async" loading="lazy" class="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32" />
                 </div>
                 <div class="border-border-base flex cursor-pointer items-center justify-center overflow-hidden rounded border transition hover:opacity-75 ">
-                  <img alt="Product 2" src="images/banner/<?php echo $row['image']; ?>" decoding="async" loading="lazy" class="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32" />
+                  <img alt="Product 2" src="images/banner/" decoding="async" loading="lazy" class="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32" />
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="flex shrink-0 flex-col lg:w-[430px] xl:w-[470px] 2xl:w-[480px]">
@@ -122,18 +120,20 @@ include("include/post.php");
               <h2 class="mt-2 text-2x1 font-semibold md:text-xl xl:text-2xl">
                 <?php echo $row['title']; ?>
               </h2>
-              <p>Posted on <?php echo date('F jS, Y', strtotime($row['date'])); ?></p>
+              <div>
+                <span class="text-gray-600">Posted on <?php echo date('F jS, Y', strtotime($row['date'])); ?></span>
+              </div>
 
               <!-- <button type="button" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 my-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                 <span class="block">Rs <?php echo $row['price']; ?></span>
               </button> -->
 
-              <h3 class="mt-3 text-xl font-bold leading-tight text-black sm:text-4xl lg:text-3xl"><span class="text-green-500">₹ </span><?php echo $row['price']; ?>/-</h3>
+              <h3 class="mt-3 text-xl font-bold leading-tight text-black sm:text-4xl lg:text-3xl"><span class="text-green-800">₹ </span><?php echo $row['price']; ?>/-</h3>
             </div>
             <div class="space-y-2.5 md:space-y-3.5 lg:pt-2 xl:pt-4">
 
               <div class="grid grid-cols-2 gap-2.5">
-                <button type="button" class="inline-flex items-center justify-center rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+                <button type="button" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                   <span class="block">Download</span>
                 </button>
                 <div class="relative">
@@ -169,6 +169,14 @@ include("include/post.php");
               <p class="text-sm">
                 <?php echo $row['description']; ?>
               </p>
+            </div>
+            <div class="pt-2 xl:pt-2">
+              <b class="text-15px mb-3 mt-4 font-semibold sm:text-base lg:mb-3.5">
+                note:
+              </b>
+              <span class="text-sm">
+                These Softwares are not suitable for any of the business requriements.
+              </span>
             </div>
           </div>
         </div>

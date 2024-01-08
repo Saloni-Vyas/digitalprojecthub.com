@@ -49,7 +49,7 @@ $result=($page-1)*$post_per_page;
 
 <section class="text-gray-600 body-font">
 
-          <h5 class="mt-20 pb-20 text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl"><?php echo $search=$_REQUEST['search'];?> Realated <span style="color: rgb(161,54,130);
+          <h5 class="mt-20 mb-10 text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl"><?php echo $search=$_REQUEST['search'];?> Realated <span style="color: rgb(161,54,130);
 color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">Projects</span></h5>
           <div class="container px-5 py-7 mx-auto">
     <div class="flex flex-wrap -m-4 justify-center">
