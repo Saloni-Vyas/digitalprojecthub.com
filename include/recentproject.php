@@ -1,5 +1,5 @@
 <section class="text-gray-600 body-font">
-<h3 class="mt-6 pb-3 text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Recent <span style="color: rgb(161,54,130);
+<h3 class="mt-40 pb-3 text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Recent <span style="color: rgb(161,54,130);
 color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">projects</span></h3>
   <div class="container px-5 py-7 mx-auto">
     <div class="flex flex-wrap -m-4 justify-center">

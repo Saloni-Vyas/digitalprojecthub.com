@@ -88,7 +88,7 @@ include("include/post.php");
             <div class="w-full xl:flex xl:flex-row-reverse">
               <div class="relative mb-2.5 w-full shrink-0 overflow-hidden rounded-md border md:mb-3 xl:w-[480px] 2xl:w-[650px]">
                 <div class="relative flex items-center justify-center">
-                  <img alt="Product gallery 1" src="images/banner/<?php echo $row['image']; ?>" width="650" height="590" decoding="async" loading="lazy" class="rounded-lg object-cover md:h-[300px] md:w-full lg:h-full" />
+                  <img alt="Product gallery 1" src="images/banner/tu1.png" width="650" height="590" decoding="async" loading="lazy" class="rounded-lg object-cover md:h-[300px] md:w-full lg:h-full" />
                 </div>
                 <div class="absolute top-2/4 z-10 flex w-full items-center justify-between">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
@@ -101,13 +101,13 @@ include("include/post.php");
               </div>
               <div class="flex gap-2 xl:flex-col">
                 <div class="border-border-base flex cursor-pointer items-center justify-center overflow-hidden rounded border transition hover:opacity-75 ">
-                  <img alt="Product 0" src="https://images.unsplash.com/photo-1580902394836-21e0d429b7f4?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=924&amp;q=80" decoding="async" loading="lazy" class="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32" />
+                  <img alt="Product 0" src="images/banner/tu1.png" decoding="async" loading="lazy" class="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32" />
                 </div>
                 <div class="border-border-base flex cursor-pointer items-center justify-center overflow-hidden rounded border transition hover:opacity-75 ">
-                  <img alt="Product 1" src="https://images.unsplash.com/photo-1580902394743-1394a7ec93d2?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" decoding="async" loading="lazy" class="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32" />
+                  <img alt="Product 1" src="images/banner/<?php echo $row['image']; ?>" decoding="async" loading="lazy" class="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32" />
                 </div>
                 <div class="border-border-base flex cursor-pointer items-center justify-center overflow-hidden rounded border transition hover:opacity-75 ">
-                  <img alt="Product 2" src="https://images.unsplash.com/photo-1580902394767-81b0facc0894?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" decoding="async" loading="lazy" class="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32" />
+                  <img alt="Product 2" src="images/banner/<?php echo $row['image']; ?>" decoding="async" loading="lazy" class="h-20 w-20 object-cover md:h-24 md:w-24 lg:h-28 lg:w-28 xl:w-32" />
                 </div>
               </div>
             </div>
@@ -128,9 +128,9 @@ include("include/post.php");
                 <span class="block">Rs <?php echo $row['price']; ?></span>
               </button> -->
 
-              <h3 class="mt-6 pb-3 text-xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl"><span class="text-green-500">₹ </span><?php echo $row['price']; ?>/-</h3>
+              <h3 class="mt-3 text-xl font-bold leading-tight text-black sm:text-4xl lg:text-3xl"><span class="text-green-500">₹ </span><?php echo $row['price']; ?>/-</h3>
             </div>
-            <div class="space-y-2.5 pt-1.5 md:space-y-3.5 lg:pt-3 xl:pt-4">
+            <div class="space-y-2.5 md:space-y-3.5 lg:pt-2 xl:pt-4">
 
               <div class="grid grid-cols-2 gap-2.5">
                 <button type="button" class="inline-flex items-center justify-center rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">

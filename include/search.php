@@ -3,7 +3,7 @@
 background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">
    <div class="container px-5 py-24 mx-auto">
      <div class="flex flex-col text-center w-full mb-12">
-       <h1 class="mt-6 pb-3 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl" style="color: #ffffff">Turning idea into project</h1>
+       <h1 class="mt-6 pb-3 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-6xl" style="color: #ffffff">Turning idea into project</h1>
        <p style="color: #fff" class="lg:w-2/3 mx-auto leading-relaxed text-base">Unlocking Innovation, One Line of Code at a Time – Your Gateway to Next-Gen Solutions!</p>
      </div>
 

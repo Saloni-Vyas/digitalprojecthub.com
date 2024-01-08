@@ -2,9 +2,9 @@
 
 
   <div class="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-xl text-center">
-      <h2 class="mt-6 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-        DPH helps you build beautiful <span style="color: rgb(161,54,130);
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="mt-6 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-6xl">
+        DigitalProjectHub helps you build beautiful <span style="color: rgb(161,54,130);
 color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">projects</span>
       </h2>
       <p class="mt-4 text-base leading-relaxed text-gray-600">
