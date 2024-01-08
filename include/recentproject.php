@@ -27,7 +27,7 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">p
                 >
 
                   
-                  <span class="block">Rs: <?php echo $row['price'];?></span>
+                  <span class="block">₹ <?php echo $row['price'];?> INR</span>
                 </button>
             <button
                   type="button"

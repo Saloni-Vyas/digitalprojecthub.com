@@ -124,11 +124,8 @@ include("include/post.php");
                 <span class="text-gray-600">Posted on <?php echo date('F jS, Y', strtotime($row['date'])); ?></span>
               </div>
 
-              <!-- <button type="button" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 my-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
-                <span class="block">Rs <?php echo $row['price']; ?></span>
-              </button> -->
 
-              <h3 class="mt-3 text-xl font-bold leading-tight text-black sm:text-4xl lg:text-3xl"><span class="text-green-800">₹ </span><?php echo $row['price']; ?>/-</h3>
+              <h3 class="mt-3 text-xl font-bold leading-tight text-black sm:text-4xl lg:text-3xl"><span class="text-green-800">₹ </span><?php echo $row['price']; ?> INR</h3>
             </div>
             <div class="space-y-2.5 md:space-y-3.5 lg:pt-2 xl:pt-4">
 
@@ -182,9 +179,142 @@ include("include/post.php");
         </div>
         <hr class="m-10">
         <div class="project">
-
           <?php echo $row['content']; ?>
         </div>
+        <!-- project table start  -->
+        <section class="mx-auto w-full max-w-7xl py-4">
+  <div class="flex flex-col space-y-4 md:flex-row md:items-center md:justify-between md:space-y-0">
+    <div>
+      <h2 class="text-lg font-semibold">Project Details:</h2>
+      <p class="mt-1 text-sm text-gray-700">
+        This is a list of Project Details.
+      </p>
+    </div>
+   
+  </div>
+  <div class="mt-6 flex flex-col">
+    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+        <div class="overflow-hidden border border-gray-200 md:rounded-lg">
+          <table class="min-w-full divide-y divide-gray-200">          
+            <tbody class="divide-y divide-gray-200 bg-white">
+              <tr>
+                <td class="whitespace-nowrap px-4 py-4">
+                  <div class="flex items-center">
+                                      <div>
+                      <div class="text-sm text-gray-700">Title</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="whitespace-nowrap px-12 py-4">
+                  <div class="text-sm text-gray-700"><?php echo $row['title']; ?></div>
+                </td>
+              
+              </tr>
+             
+              
+              </tr>
+              <tr>
+                <td class="whitespace-nowrap px-4 py-4">
+                  <div class="flex items-center">
+                                      <div>
+                      <div class="text-sm text-gray-700">Project Category</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="whitespace-nowrap px-12 py-4">
+                  <div class="text-sm text-gray-700"><?php echo $row['cname']; ?></div>
+                </td>
+              
+              </tr>
+              <tr>
+                <td class="whitespace-nowrap px-4 py-4">
+                  <div class="flex items-center">
+                                      <div>
+                      <div class="text-sm text-gray-700">Price</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="whitespace-nowrap px-12 py-4">
+                  <div class="text-sm text-gray-700">₹ <?php echo $row['price']; ?> INR</div>
+                </td>
+              
+              </tr>
+              <tr>
+                <td class="whitespace-nowrap px-4 py-4">
+                  <div class="flex items-center">
+                                      <div>
+                      <div class="text-sm text-gray-700">Documentaion</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="whitespace-nowrap px-12 py-4">
+                  <div class="text-sm text-gray-700">We don't take any extra charges for any project</div>
+                </td>
+              
+              </tr>
+              <tr>
+                <td class="whitespace-nowrap px-4 py-4">
+                  <div class="flex items-center">
+                                      <div>
+                      <div class="text-sm text-gray-700">Helpline</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="whitespace-nowrap px-12 py-4">
+                  <div class="text-sm text-gray-700">+91 8839178090</div>
+                </td>
+              
+              </tr>
+              <tr>
+                <td class="whitespace-nowrap px-4 py-4">
+                  <div class="flex items-center">
+                                      <div>
+                      <div class="text-sm text-gray-700">Note</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="whitespace-nowrap px-12 py-4">
+                  <div class="text-sm text-gray-700">These Softwares are not suitable for any of the business requriements.</div>
+                </td>
+              
+              </tr>
+              <tr>
+                <td class="whitespace-nowrap px-4 py-4">
+                  <div class="flex items-center">
+                                      <div>
+                      <div class="text-sm text-gray-700">Listed On</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="whitespace-nowrap px-12 py-4">
+                  <div class="text-sm text-gray-700"><?php echo date('F jS, Y', strtotime($row['date'])); ?></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="whitespace-nowrap px-4 py-4">
+                  <div class="flex items-center">
+                                      <div>
+                      <div class="text-sm text-gray-700">Download</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="whitespace-nowrap px-12 py-4">
+                  <div class="text-sm text-gray-700"><button type="button" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+                  <span class="block">Download</span>
+                </button></div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <!-- project table end  -->
       </div>
 
     </div>
