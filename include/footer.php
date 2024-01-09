@@ -28,22 +28,22 @@
           </h3>
           <ul>
             <li class="mb-4">
-              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/">
                 Features
               </a>
             </li>
             <li class="mb-4">
-              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/">
                 Pricing
               </a>
             </li>
             <li class="mb-4">
-              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/">
                 Affiliate Program
               </a>
             </li>
             <li>
-              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/">
                 Press Kit
               </a>
             </li>
@@ -57,22 +57,22 @@
           </h3>
           <ul>
             <li class="mb-4">
-              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/">
                 Account
               </a>
             </li>
             <li class="mb-4">
-              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/">
                 Help
               </a>
             </li>
             <li class="mb-4">
-              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/">
                 Contact Us
               </a>
             </li>
             <li>
-              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/">
                 Customer Support
               </a>
             </li>
@@ -86,17 +86,17 @@
           </h3>
           <ul>
             <li class="mb-4">
-              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/">
                 Terms &amp; Conditions
               </a>
             </li>
             <li class="mb-4">
-              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/">
                 Privacy Policy
               </a>
             </li>
             <li>
-              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/">
                 Licensing
               </a>
             </li>

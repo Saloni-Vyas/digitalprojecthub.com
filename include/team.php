@@ -12,7 +12,7 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
                   loading="lazy">
           <div class="flex-grow">
             <h2 class="text-gray-900 title-font font-medium mb-1">Rohit Bhure</h2>
-            <p class="text-gray-500">Greetings! I am Rohit Bhure, a passionate and dedicated computer science student currently in my third year of B.Tech.</p>
+            <p class="text-gray-500">I am Rohit Bhure, a passionate and dedicated computer science student currently in my third year of B.Tech.</p>
           </div>
         </div>
       </div>
@@ -22,7 +22,7 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
                   loading="lazy">
           <div class="flex-grow">
             <h2 class="text-gray-900 title-font font-medium mb-1">Divyansh Sharma</h2>
-            <p class="text-gray-500">Greetings! I am Divynash Sharma, a passionate and dedicated computer science student currently in my third year of B.Tech.</p>
+            <p class="text-gray-500">I am Divynash Sharma, a passionate and dedicated computer science student currently in my third year of B.Tech.</p>
           </div>
         </div>
       </div>

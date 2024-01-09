@@ -208,7 +208,7 @@ include("include/post.php");
                 <td class="whitespace-nowrap px-4 py-4">
                   <div class="flex items-center">
                                       <div>
-                      <div class="text-sm text-gray-700">Title</div>
+                      <div class="text-sm text-gray-700"><b>Title</b></div>
                     </div>
                   </div>
                 </td>
@@ -224,7 +224,7 @@ include("include/post.php");
                 <td class="whitespace-nowrap px-4 py-4">
                   <div class="flex items-center">
                                       <div>
-                      <div class="text-sm text-gray-700">Project Category</div>
+                      <div class="text-sm text-gray-700"><b>Project Category</b></div>
                     </div>
                   </div>
                 </td>
@@ -237,7 +237,7 @@ include("include/post.php");
                 <td class="whitespace-nowrap px-4 py-4">
                   <div class="flex items-center">
                                       <div>
-                      <div class="text-sm text-gray-700">Price</div>
+                      <div class="text-sm text-gray-700"><b>Price</b></div>
                     </div>
                   </div>
                 </td>
@@ -250,7 +250,7 @@ include("include/post.php");
                 <td class="whitespace-nowrap px-4 py-4">
                   <div class="flex items-center">
                                       <div>
-                      <div class="text-sm text-gray-700">Documentaion</div>
+                      <div class="text-sm text-gray-700"><b>Documentation</b></div>
                     </div>
                   </div>
                 </td>
@@ -263,12 +263,15 @@ include("include/post.php");
                 <td class="whitespace-nowrap px-4 py-4">
                   <div class="flex items-center">
                                       <div>
-                      <div class="text-sm text-gray-700">Helpline</div>
+                      <div class="text-sm text-gray-700"><b>Helpline</b></div>
                     </div>
                   </div>
                 </td>
                 <td class="whitespace-nowrap px-12 py-4">
-                  <div class="text-sm text-gray-700">+91 8839178090</div>
+                <a href="https://www.instagram.com/rohitbhure65/" target="_blank" class="block relative rounded overflow-hidden">
+                  <div class="text-sm text-gray-700"><button type="submit" class="inline-flex items-center justify-center rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+                  <span class="block">Chat with Us</span>
+                </button></div>
                 </td>
               
               </tr>
@@ -276,7 +279,7 @@ include("include/post.php");
                 <td class="whitespace-nowrap px-4 py-4">
                   <div class="flex items-center">
                                       <div>
-                      <div class="text-sm text-gray-700">Note</div>
+                      <div class="text-sm text-gray-700"><b>Note</b></div>
                     </div>
                   </div>
                 </td>
@@ -289,7 +292,7 @@ include("include/post.php");
                 <td class="whitespace-nowrap px-4 py-4">
                   <div class="flex items-center">
                                       <div>
-                      <div class="text-sm text-gray-700">Listed On</div>
+                      <div class="text-sm text-gray-700"><b>Listed On</b></div>
                     </div>
                   </div>
                 </td>
@@ -301,7 +304,7 @@ include("include/post.php");
                 <td class="whitespace-nowrap px-4 py-4">
                   <div class="flex items-center">
                                       <div>
-                      <div class="text-sm text-gray-700">Download</div>
+                      <div class="text-sm text-gray-700"><b>Download</b></div>
                     </div>
                   </div>
                 </td>

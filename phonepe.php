@@ -10,8 +10,8 @@ $ftitle = $_REQUEST['title'];
 
 $merchantId = 'PGTESTPAYUAT'; // sandbox or test merchantId
 $apiKey = '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399'; // sandbox or test APIKEY
-$redirectUrl = 'http://localhost:80/digitalprojecthub.com/payment-success.php';
-$callbackUrl = 'http://localhost:80/digitalprojecthub.com/';
+$redirectUrl = 'http://localhost:80/payment-success.php';
+$callbackUrl = 'http://localhost:80/';
 // Set transaction details
 $order_id = uniqid();
 $name = $fname;
