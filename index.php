@@ -63,6 +63,11 @@ include("config.php");
 <?php include("include/contact.php");?>
 <!-- contact end -->
 
+<!-- contact start -->
+<?php include("include/teami.php");?>
+<!-- contact end -->
+
+
 <!-- testinomial start  -->
 <section class="px-2 md:px-0">
 <div class="mx-auto text-center">
@@ -71,8 +76,7 @@ include("config.php");
 color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">ProjectHub</span>
       </h2>
       <p class="mt-4 text-base leading-relaxed text-gray-600">
-        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-        Velit officia consequat duis enim velit mollit.
+      Empowering Dreams, Inspiring Success – Hear what our satisfied users have to say about their journey with us.<br> Real stories, real results, real testimonials that speak louder than words.
       </p>
     </div>
   <div class="mx-auto max-w-4xl mt-10">
@@ -87,13 +91,11 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
       <div class="mt-10 md:mt-0">
         <blockquote>
           <p class="text-xl text-black">
-            “Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-            aliquam repellat laborum minima tempore deserunt explicabo placeat!
-            Fugit, molestias nesciunt.”
+            “DigitalProjectHub has truly been a game-changer for my academic journey. The variety and quality of projects available on the website surpassed my expectations. The user-friendly interface made it easy for me to find and purchase the perfect project for my computer science course.”
           </p>
         </blockquote>
-        <p class="mt-7 text-lg font-semibold text-black">John Doe</p>
-        <p class="mt-1 text-base text-gray-600">Frontend Developer at DevUI</p>
+        <p class="mt-7 text-lg font-semibold text-black">Rahul Verma</p>
+        <p class="mt-1 text-base text-gray-600">Pursuing BTech</p>
       </div>
     </div>
   </div>

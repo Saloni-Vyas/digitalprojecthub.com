@@ -1,4 +1,4 @@
-<section class="relative overflow-hidden py-20 mt-20">
+<section class="relative overflow-hidden py-20 mt-10">
   <hr class="py-5">
   <div class="relative z-10 mx-auto max-w-7xl px-4">
     <div class="-m-6 flex flex-wrap">
@@ -13,7 +13,7 @@
           </div>
           <div>
             <p class="mb-4  text-base font-medium">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam ea, deserunt eum animi necessitatibus unde placeat sit voluptatem, enim possimus perferendis pariatur magnam iure est, in vitae aspernatur ex minima nisi. Optio.
+            Welcome to <strong>DigitalProjectHub</strong> – Your Gateway to Digital Brilliance! Explore, Create, and Elevate with our curated collection of cutting-edge digital projects, where innovation meets opportunity. Transform your ideas into reality, one project at a time.
             </p>
             <p class="text-sm text-gray-600">
               © Copyright <?php echo date("Y"); ?>. All Rights Reserved by DigitalProjectHub.

@@ -130,12 +130,15 @@ include("include/post.php");
             <div class="space-y-2.5 md:space-y-3.5 lg:pt-2 xl:pt-4">
 
               <div class="grid grid-cols-2 gap-2.5">
-              <form name="search" action="projects.php">
-                
-                <button type="button" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+
+              <a href="checkout.php?pid=<?php echo $row['pid'];?>" class="block relative rounded overflow-hidden">
+                <button type="submit" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                   <span class="block">Download</span>
+
                 </button>
-              </form>
+              </a>
+
+             
                 <div class="relative">
                   <!-- <button
                   type="button"
@@ -303,9 +306,11 @@ include("include/post.php");
                   </div>
                 </td>
                 <td class="whitespace-nowrap px-12 py-4">
-                  <div class="text-sm text-gray-700"><button type="button" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+                <a href="checkout.php?pid=<?php echo $row['pid'];?>" class="block relative rounded overflow-hidden">
+                  <div class="text-sm text-gray-700"><button type="submit" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                   <span class="block">Download</span>
                 </button></div>
+                </a>
                 </td>
               </tr>
 

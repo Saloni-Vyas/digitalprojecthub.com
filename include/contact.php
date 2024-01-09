@@ -4,7 +4,9 @@
     <h3 class="mt-6 pb-3 text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Contact U<span style="color: rgb(161,54,130);
 color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">s</span></h3>
     </div>
-      <p class="mb-8 lg:mb-16 font-light text-center sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
+    <p class="mt-4 pb-4 text-base leading-relaxed text-center text-gray-600">
+    Connect with us – because at DigitalProjectHub, every inquiry is a conversation waiting to happen. Your questions, our solutions, let’s make it happen together!
+      </p>
       <form action="#" class="space-y-8">
           <div>
               <label for="email" class="block mb-2 text-sm font-medium">Your email</label>

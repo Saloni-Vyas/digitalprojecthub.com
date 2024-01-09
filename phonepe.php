@@ -2,17 +2,24 @@
 <?php
 // Replace these with your actual PhonePe API credentials
 
+$fname = $_REQUEST['firstname'] . ' ' . $request['lastname'];
+$femail = $_REQUEST['email'];
+$fphone = $_REQUEST['phone'];
+$fprice = $_REQUEST['price'];
+$ftitle = $_REQUEST['title'];
+
 $merchantId = 'PGTESTPAYUAT'; // sandbox or test merchantId
 $apiKey = '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399'; // sandbox or test APIKEY
 $redirectUrl = 'http://localhost:80/digitalprojecthub.com/payment-success.php';
 $callbackUrl = 'http://localhost:80/digitalprojecthub.com/';
 // Set transaction details
 $order_id = uniqid();
-$name = "Tutorials Website";
-$email = "info@tutorialswebsite.com";
+$name = $fname;
+$email = $femail;
 $mobile = 8839178090;
-$amount = 1540; // amount in INR
-$description = 'Payment for Product/Service';
+$customer_mob = $fphone;
+$amount = $fprice; // amount in INR
+$description = 'Payment for ' . $ftitle;
 
 
 $paymentData = array(
@@ -25,6 +32,8 @@ $paymentData = array(
     'callbackUrl' => $callbackUrl,
     "merchantOrderId" => $order_id,
     "mobileNumber" => $mobile,
+    "customer_mob" => $customer_mob,
+    "description" => $description,
     "message" => $description,
     "email" => $email,
     "shortName" => $name,
