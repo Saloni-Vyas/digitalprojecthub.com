@@ -14,7 +14,7 @@ include("include/post.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DigitalProjectHub.com</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="js/cdntailwindcss.js"></script>
 </head>
 
 <body>
@@ -118,7 +118,7 @@ include("include/post.php");
                             <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="email">
                                 Price in INR
                             </label>
-                            <strong><input name="price" value="<?php echo $row['price']; ?>" class="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50" type="text"  id="price" readonly/></strong>
+                            <strong><input style="background: #e9e9e9;" name="price" value="<?php echo $row['price']; ?>" class="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50" type="text"  id="price" readonly/></strong>
                         </div>
                     </div>
                     <div class="col-span-2 grid">
@@ -126,7 +126,7 @@ include("include/post.php");
                             <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="email">
                                 Project
                             </label>
-                            <strong><input name="title" value="<?php echo $row['title']; ?>" class="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50" type="text"  id="titile" readonly/></strong>
+                            <strong><input style="background: #e9e9e9;" name="title" value="<?php echo $row['title']; ?>" class="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50" type="text"  id="titile" readonly/></strong>
                         </div>
                     </div>
                     <div class="col-span-2 grid">
@@ -156,5 +156,9 @@ include("include/post.php");
     <a href="#" class="bg-success text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a>
     <!-- End Scroll To top -->
 </body>
-
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+ google.load('visualization', '1', {packages: ['annotatedtimeline']});
+ </script>
 </html>

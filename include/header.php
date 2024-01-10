@@ -78,7 +78,7 @@
             </a>
           </li>
           <li>
-            <a href="/projects.php?technology=&search=" class="inline-flex items-center mr-4 text-sm font-semibold text-gray-800 hover:text-gray-900">
+            <a href="/projects?technology=&search=" class="inline-flex items-center mr-4 text-sm font-semibold text-gray-800 hover:text-gray-900">
               Projects
               <!-- <span>
               <svg

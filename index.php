@@ -21,10 +21,11 @@ include("config.php");
 
 <title>DigitalProjectHub.com</title>
 
+
 <!--	Css Link
 	========================================================-->
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="text/javascript" src="js/cdntailwindcss.js"></script>
 <!--	Title
 	=========================================================-->
 </head>
@@ -84,7 +85,8 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
       <div class="relative h-48 w-48 flex-shrink-0">
         <img
           class="relative h-48 w-48 rounded-full object-cover"
-          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
+          src="images/user/divyansh.jpg" decoding="async"
+                  loading="lazy"
           alt=""
         />
       </div>
@@ -151,8 +153,11 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
 
 <!--	Js Link
 ============================================================--> 
-<script src="js/custom.js"></script>
-
 </body>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+ <script type="text/javascript">
+ google.load('visualization', '1', {packages: ['annotatedtimeline']});
+ </script>
 
 </html>

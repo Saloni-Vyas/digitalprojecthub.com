@@ -32,7 +32,7 @@ $result=($page-1)*$post_per_page;
 <!--	Css Link
 	========================================================-->
   <link rel="stylesheet" href="css/style.css">
-<script src="https://cdn.tailwindcss.com"></script>
+  <script type="text/javascript" src="js/cdntailwindcss.js"></script>
 <!--	Title
 	=========================================================-->
 </head>
@@ -67,7 +67,7 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
          {
              ?>
       <div class="lg:w-1/5 md:w-1/2 p-0 w-full shadow-lg m-2 mt-4 rounded-lg">
-        <a href="project.php?pid=<?php echo $row['pid'];?>" class="block relative rounded overflow-hidden">
+        <a href="project?pid=<?php echo $row['pid'];?>" class="block relative rounded overflow-hidden">
           <img alt="ecommerce" class="object-cover object-center w-full h-full block" decoding="async"
                   loading="lazy" src="images/banner/<?php echo $row['image'];?>">
        
@@ -115,7 +115,11 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
         <!-- End Scroll To top --> 
     </div>
 </div>
-<script src="js/custom.js"></script>
 
 </body>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+ <script type="text/javascript">
+ google.load('visualization', '1', {packages: ['annotatedtimeline']});
+ </script>
 </html>

@@ -14,7 +14,7 @@ include("include/post.php");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DigitalProjectHub.com</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="text/javascript" src="js/cdntailwindcss.js"></script>
 </head>
 
 <body>
@@ -48,7 +48,7 @@ include("include/post.php");
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="projects.php?technology=&search=" class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="projects?technology=&search=" class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   projects
                 </a>
               </div>
@@ -58,7 +58,7 @@ include("include/post.php");
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="projects.php?technology=<?php echo $row['cname']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="projects?technology=<?php echo $row['cname']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   <span class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                     <?php echo $row['cname']; ?>
                   </span>
@@ -70,7 +70,7 @@ include("include/post.php");
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="project.php?pid=<?php echo $row['pid']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="project?pid=<?php echo $row['pid']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   <span class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                     <?php echo $row['title']; ?>
                   </span>
@@ -131,7 +131,7 @@ include("include/post.php");
 
               <div class="grid grid-cols-2 gap-2.5">
 
-              <a href="checkout.php?pid=<?php echo $row['pid'];?>" class="block relative rounded overflow-hidden">
+              <a href="checkout?pid=<?php echo $row['pid'];?>" class="block relative rounded overflow-hidden">
                 <button type="submit" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                   <span class="block">Download</span>
 
@@ -309,7 +309,7 @@ include("include/post.php");
                   </div>
                 </td>
                 <td class="whitespace-nowrap px-12 py-4">
-                <a href="checkout.php?pid=<?php echo $row['pid'];?>" class="block relative rounded overflow-hidden">
+                <a href="checkout?pid=<?php echo $row['pid'];?>" class="block relative rounded overflow-hidden">
                   <div class="text-sm text-gray-700"><button type="submit" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                   <span class="block">Download</span>
                 </button></div>
@@ -341,5 +341,9 @@ include("include/post.php");
   <a href="#" class="bg-success text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a>
   <!-- End Scroll To top -->
 </body>
-
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+ <script type="text/javascript">
+ google.load('visualization', '1', {packages: ['annotatedtimeline']});
+ </script>
 </html>

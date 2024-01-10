@@ -10,10 +10,9 @@ $ftitle = $_REQUEST['title'];
 
 $merchantId = 'PGTESTPAYUAT'; // sandbox or test merchantId
 $apiKey = '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399'; // sandbox or test APIKEY
-$redirectUrl = 'http://localhost:80/payment-success.php';
+$redirectUrl = 'http://localhost:80/payment-success';
 $callbackUrl = 'http://localhost:80/';
 // Set transaction details
-$order_id = uniqid();
 $name = $fname;
 $email = $femail;
 $mobile = 8839178090;
@@ -23,20 +22,19 @@ $description = 'Payment for ' . $ftitle;
 
 
 $paymentData = array(
-    'merchantId' => $merchantId,
-    'merchantTransactionId' => 'DPH' . rand(111111, 999999), // test transactionID
+    "merchantId" => $merchantId,
+    "merchantTransactionId" => 'DPH' . rand(111111, 999999), // test transactionID
     "merchantUserId" => 'DPH' . time(),
-    'amount' => $amount . '00',
-    'redirectUrl' => $redirectUrl,
-    'redirectMode' => "POST",
-    'callbackUrl' => $callbackUrl,
-    "merchantOrderId" => $order_id,
+    "amount" => $amount . '00',
+    "redirectUrl" => $redirectUrl,
+    "redirectMode" => "POST",
+    "callbackUrl" => $callbackUrl,
     "mobileNumber" => $mobile,
     "customer_mob" => $customer_mob,
     "description" => $description,
     "message" => $description,
     "email" => $email,
-    "shortName" => $name,
+    "name" => $name,
     "paymentInstrument" => array(
         "type" => "PAY_PAGE",
     )
