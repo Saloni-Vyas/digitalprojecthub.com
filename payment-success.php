@@ -58,9 +58,18 @@ $brn = $responsePayment['data']['paymentInstrument']['brn'];
 $responseCodeDescription = $responsePayment['data']['responseCodeDescription'];
 $paymentInstrument = $responsePayment['data']['paymentInstrument'];
 
-mysqli_query($con, "INSERT INTO `transactions` (`transactionId`, `orderId`, `success`, `code`, `tmessage`, `merchantId`, `amount`, `tstate`, `responsecode`, `ttype`, `utrId`, `cardtype`, `pgTransactionId`, `pgAuthorizationCode`, `pgServiceTransactionId`, `bankTransactionId`, `bankId`, `brn`, `responseCodeDescription`, `paymentInstrument`) VALUES(
+$name = $_REQUEST['name'];
+$email = $_REQUEST['email'];
+$phone = $_REQUEST['phone'];
+$title = $_REQUEST['title'];
+
+mysqli_query($con, "INSERT INTO `transactions` (`transactionId`, `orderId`,`name`,`email`,`phone`,`title`, `success`, `code`, `tmessage`, `merchantId`, `amount`, `tstate`, `responsecode`, `ttype`, `utrId`, `cardtype`, `pgTransactionId`, `pgAuthorizationCode`, `pgServiceTransactionId`, `bankTransactionId`, `bankId`, `brn`, `responseCodeDescription`, `paymentInstrument`) VALUES(
   '$transactionId',
   '$orderId',
+  '$name',
+  '$email',
+  '$phone',
+  '$title',
   '$success',
   '$code',
   '$tmessage',
