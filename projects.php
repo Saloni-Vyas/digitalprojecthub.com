@@ -69,8 +69,7 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
       <div class="lg:w-1/5 md:w-1/2 p-0 w-full shadow-lg m-2 mt-4 rounded-lg">
         <a href="project?pid=<?php echo $row['pid'];?>" class="block relative rounded overflow-hidden">
           <img alt="ecommerce" class="object-cover object-center w-full h-full block" decoding="async"
-                  loading="lazy" src="images/banner/<?php echo $row['image'];?>">
-       
+                  loading="lazy" src="images/project/<?php echo $row['image'];?>">
         <div class="mt-4 p-3">
         <div class="flex flex-row justify-between">
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><?php echo $row['cname'];?></h3>

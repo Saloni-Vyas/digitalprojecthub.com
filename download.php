@@ -11,7 +11,7 @@ $row = mysqli_fetch_assoc($query);
 $code = $row["code_file"];
 // $transactionId = $_REQUEST['pid']['transactionid'];
 // mysqli_query($con, "UPDATE transactions SET `file`=$code WHERE `transactionId`=$transactionId;");
-header('Location: ' . $code);
+header('Location: ' . 'file/' . $code);
 exit;
 // echo "<pre>";
 // echo $code;
