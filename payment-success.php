@@ -43,7 +43,7 @@ $success = $responsePayment['success'];
 $code = $responsePayment['code'];
 $tmessage = $responsePayment['message'];
 $merchantId = $responsePayment['data']['merchantId'];
-$amount = $responsePayment['data']['amount'];
+$amount = rtrim($responsePayment['data']['amount'], "00");
 $tstate = $responsePayment['data']['state'];
 $responsecode = $responsePayment['data']['responseCode'];
 $ttype = $responsePayment['data']['paymentInstrument']['type'];
@@ -80,7 +80,7 @@ mysqli_query($con, "INSERT INTO `transactions` (`transactionId`, `orderId`, `suc
   '$responseCodeDescription',
   '$paymentInstrument'
   );");
-
+$pid = $_REQUEST['pid'];
 ?>
 
 <!DOCTYPE html>
@@ -178,11 +178,11 @@ mysqli_query($con, "INSERT INTO `transactions` (`transactionId`, `orderId`, `suc
                         </div>
                       </td>
                       <td class="flex whitespace-nowrap px-12 py-4">
-                        <a href="/" class="block relative rounded overflow-hidden">
+                        <form name="download" method="post" action="download?pid=<?php echo $pid; ?>" class="block relative rounded overflow-hidden">
                           <div class="text-sm text-gray-700"><button type="submit" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                               <span class="block">Download</span>
                             </button></div>
-                        </a>
+                        </form>
                       </td>
 
                     </tr>
