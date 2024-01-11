@@ -21,7 +21,7 @@ include("include/post.php");
     <?php include("include/header.php"); ?>
     <!--	Header end  -->
     <?php
-        $pid = $_GET['pid'];
+        $pid = $_REQUEST['pid'];
         $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND pid=$pid");
         $row = mysqli_fetch_assoc($query); ?>
     <!-- create checkout start  -->
@@ -64,7 +64,7 @@ include("include/post.php");
           </ol>
         </nav>
 
-        <form name="checkout" method="post" action="phonepe.php">
+        <form name="checkout" method="post" action="phonepe?pid=<?php echo $pid;?>">
             <div class="overflow-hidden rounded-xl bg-white p-4 shadow">
                 <div class="mb-4 flex items-center rounded-lg py-2">
                     <div class="mr-2 rounded-full bg-gray-100  p-2 text-black">

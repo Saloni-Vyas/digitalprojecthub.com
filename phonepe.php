@@ -1,7 +1,7 @@
 
 <?php
 // Replace these with your actual PhonePe API credentials
-
+$pid = $_REQUEST['pid'];
 $fname = $_REQUEST['firstname'] . ' ' . $request['lastname'];
 $femail = $_REQUEST['email'];
 $fphone = $_REQUEST['phone'];
@@ -10,7 +10,7 @@ $ftitle = $_REQUEST['title'];
 
 $merchantId = 'PGTESTPAYUAT'; // sandbox or test merchantId
 $apiKey = '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399'; // sandbox or test APIKEY
-$redirectUrl = 'http://localhost:80/payment-success';
+$redirectUrl = 'http://localhost:80/payment-success?pid='.$pid;
 $callbackUrl = 'http://localhost:80/';
 // Set transaction details
 $name = $fname;

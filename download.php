@@ -1,0 +1,20 @@
+<?php
+ini_set('session.cache_limiter', 'public');
+session_cache_limiter(false);
+session_start();
+include("config.php");
+include("include/post.php");
+// SELECT code_file FROM project WHERE pid = 18;
+$pid = $_REQUEST['pid'];
+$transactionId = $_REQUEST['transactionId'];
+// $pid = $_REQUEST['pid'];
+$query = mysqli_query($con, "SELECT code_file FROM project WHERE pid=$pid;");
+$row = mysqli_fetch_assoc($query);
+$code = $row["code_file"];
+mysqli_query($con, "INSERT INTO `transactions` (`file`) VALUES('$code'); WHERE transactionId = $transactionId;");
+// echo "<pre>";
+// echo $code;
+// echo $pid;
+// echo "</pre>";
+header('Location: ' . $code);
+exit;
