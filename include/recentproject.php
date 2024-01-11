@@ -1,11 +1,11 @@
 <section id="project" class="text-gray-600 body-font">
-  <h3 class="mt-40 pb-3 text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Recent <span style="color: rgb(161,54,130);
+  <h3 class="mt-20 pb-3 text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Recent <span style="color: rgb(161,54,130);
 color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">Projects</span></h3>
   <div class="container px-5 py-7 mx-auto">
     <div class="flex flex-wrap -m-4 justify-center">
       <?php
 
-      $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid LIMIT 8");
+      $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid LIMIT 4");
       while ($row = mysqli_fetch_assoc($query)) {
       ?>
         <div class="lg:w-1/5 md:w-1/2 p-0 w-full shadow-lg m-2 mt-4 rounded-lg">

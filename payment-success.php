@@ -3,7 +3,6 @@ ini_set('session.cache_limiter', 'public');
 session_cache_limiter(false);
 session_start();
 include("config.php");
-include("include/post.php");
 
 $key = '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399'; // KEY
 $key_index = 1; // KEY_INDEX

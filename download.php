@@ -3,7 +3,6 @@ ini_set('session.cache_limiter', 'public');
 session_cache_limiter(false);
 session_start();
 include("config.php");
-include("include/post.php");
 // SELECT code_file FROM project WHERE pid = 18;
 $pid = $_REQUEST['pid'];
 $query = mysqli_query($con, "SELECT code_file FROM project WHERE pid=$pid;");
