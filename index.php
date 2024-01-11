@@ -85,7 +85,7 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
       <div class="relative h-48 w-48 flex-shrink-0">
         <img
           class="relative h-48 w-48 rounded-full object-cover"
-          src="images/tean/divyansh.jpg" decoding="async"
+          src="images/team/divyansh.jpg" decoding="async"
                   loading="lazy"
           alt=""
         />
