@@ -8,7 +8,7 @@
 color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">projects</span>
       </h2>
       <p class="mt-4 text-base leading-relaxed text-gray-600">
-      Elevate your journey through innovation – explore our project categories and embark on a seamless odyssey of creativity and learning!
+        Elevate your journey through innovation – explore our project categories and embark on a seamless odyssey of creativity and learning!
       </p>
     </div>
     <div class="mt-12 grid grid-cols-1 gap-y-8 text-center sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">

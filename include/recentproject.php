@@ -14,7 +14,7 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
             <div class="mt-4 p-3">
               <div class="flex flex-row justify-between">
                 <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><?php echo $row['cname']; ?></h3>
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Posted on <?php echo date('F jS, Y', strtotime($row['date'])); ?></h3>
+                <h3 class="text-gray-500 text-xs text-right tracking-widest title-font mb-1">Posted on <?php echo date('F jS, Y', strtotime($row['date'])); ?></h3>
               </div>
               <h2 class="text-gray-900 title-font text-sm font-medium"><?php echo $row['title']; ?></h2>
               <div class="flex flex-row mt-2 justify-end">

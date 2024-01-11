@@ -1,9 +1,9 @@
  <!-- banner start -->
  <section class="banner text-gray-600 body-font py-10" style="background: rgb(161,54,130);
 background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">
-   <div class="container px-5 py-24 mx-auto">
+   <div class="container max-w-5xl px-5 py-24 mx-auto">
      <div class="flex flex-col text-center w-full mb-12">
-       <span class="mt-6 pb-3 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-6xl" style="color: #ffffff">Turn Your ideas into project</span>
+       <span class="mt-6 pb-3 text-3xl font-black leading-tight text-black sm:text-4xl lg:text-6xl" style="color: #ffffff">Turn Your ideas into project into real life project</span>
        <p style="color: #fff" class="lg:w-2/3 mx-auto leading-relaxed text-base">where innovation meets execution, and bugs are just unexpected features waiting to be discovered!</p>
      </div>
 
@@ -21,4 +21,4 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
      </form>
 
    </div>
-  </section>
+ </section>

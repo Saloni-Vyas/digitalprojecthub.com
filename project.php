@@ -17,6 +17,9 @@ include("config.php");
   <script type="text/javascript" src="js/cdntailwindcss.js"></script>
   <style>
     .project p{
+      padding-bottom: 1.4rem;
+    }
+    .project h1,h2{
       padding-bottom: 1rem;
     }
   </style>
