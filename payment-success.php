@@ -3,7 +3,6 @@ ini_set('session.cache_limiter', 'public');
 session_cache_limiter(false);
 session_start();
 include("config.php");
-include("include/post.php");
 
 $key = '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399'; // KEY
 $key_index = 1; // KEY_INDEX
@@ -58,9 +57,18 @@ $brn = $responsePayment['data']['paymentInstrument']['brn'];
 $responseCodeDescription = $responsePayment['data']['responseCodeDescription'];
 $paymentInstrument = $responsePayment['data']['paymentInstrument'];
 
-mysqli_query($con, "INSERT INTO `transactions` (`transactionId`, `orderId`, `success`, `code`, `tmessage`, `merchantId`, `amount`, `tstate`, `responsecode`, `ttype`, `utrId`, `cardtype`, `pgTransactionId`, `pgAuthorizationCode`, `pgServiceTransactionId`, `bankTransactionId`, `bankId`, `brn`, `responseCodeDescription`, `paymentInstrument`) VALUES(
+$name = $_REQUEST['name'];
+$email = $_REQUEST['email'];
+$phone = $_REQUEST['phone'];
+$title = $_REQUEST['title'];
+
+mysqli_query($con, "INSERT INTO `transactions` (`transactionId`, `orderId`,`name`,`email`,`phone`,`title`, `success`, `code`, `tmessage`, `merchantId`, `amount`, `tstate`, `responsecode`, `ttype`, `utrId`, `cardtype`, `pgTransactionId`, `pgAuthorizationCode`, `pgServiceTransactionId`, `bankTransactionId`, `bankId`, `brn`, `responseCodeDescription`, `paymentInstrument`) VALUES(
   '$transactionId',
   '$orderId',
+  '$name',
+  '$email',
+  '$phone',
+  '$title',
   '$success',
   '$code',
   '$tmessage',

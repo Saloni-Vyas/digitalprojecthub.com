@@ -67,7 +67,7 @@
               </a>
             </li>
             <li class="mb-4">
-              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/">
+              <a class=" text-base font-medium text-gray-900 hover:text-gray-700" href="/#contact">
                 Contact Us
               </a>
             </li>
