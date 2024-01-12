@@ -16,10 +16,12 @@ include("config.php");
   <!-- slick slider CSS library files -->
   <script type="text/javascript" src="js/cdntailwindcss.js"></script>
   <style>
-    .project p{
+    .project p {
       padding-bottom: 1.4rem;
     }
-    .project h1,h2{
+
+    .project h1,
+    h2 {
       padding-bottom: 1rem;
     }
   </style>
@@ -33,9 +35,9 @@ include("config.php");
   <?php include("include/search.php"); ?>
   <!-- search end -->
 
-  <div class="sp mx-auto max-w-7xl px-2 py-10 lg:px-0">
+  <div class="sp mx-auto max-w-7xl px-2 py-0 lg:px-0">
     <div class="overflow-hidden">
-      <div class="mb-9 pt-4 md:px-6 md:pt-7 lg:mb-2 lg:p-8 2xl:p-10 2xl:pt-10">
+      <div class="mb-9 pt-2 md:px-6 md:pt-7 lg:mb-2 lg:p-8 2xl:p-10 2xl:pt-10">
         <?php
         $pid = $_GET['pid'];
         $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND pid=$pid");
@@ -167,35 +169,9 @@ include("config.php");
                 <a href="checkout?pid=<?php echo $row['pid']; ?>" class="block relative rounded overflow-hidden">
                   <button type="submit" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                     <span class="block">Download</span>
-
                   </button>
                 </a>
 
-
-                <div class="relative">
-                  <!-- <button
-                  type="button"
-                  class="inline-flex w-full items-center justify-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="mr-3"
-                  >
-                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-                    <polyline points="16 6 12 2 8 6"></polyline>
-                    <line x1="12" y1="2" x2="12" y2="15"></line>
-                  </svg>
-                  <span class="block">Share</span>
-                </button> -->
-                </div>
               </div>
             </div>
             <div class="pt-6 xl:pt-8">
@@ -229,7 +205,6 @@ include("config.php");
                 This is a list of Project Details.
               </p>
             </div>
-
           </div>
           <div class="mt-6 flex flex-col">
             <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -248,10 +223,6 @@ include("config.php");
                         <td class="whitespace-nowrap px-12 py-4">
                           <div class="text-sm text-gray-700"><?php echo $row['title']; ?></div>
                         </td>
-
-                      </tr>
-
-
                       </tr>
                       <tr>
                         <td class="whitespace-nowrap px-4 py-4">
@@ -264,7 +235,6 @@ include("config.php");
                         <td class="whitespace-nowrap px-12 py-4">
                           <div class="text-sm text-gray-700"><?php echo $row['cname']; ?></div>
                         </td>
-
                       </tr>
                       <tr>
                         <td class="whitespace-nowrap px-4 py-4">
@@ -277,7 +247,6 @@ include("config.php");
                         <td class="whitespace-nowrap px-12 py-4">
                           <div class="text-sm text-gray-700">₹ <?php echo $row['price']; ?> INR</div>
                         </td>
-
                       </tr>
                       <tr>
                         <td class="whitespace-nowrap px-4 py-4">
@@ -290,7 +259,6 @@ include("config.php");
                         <td class="whitespace-nowrap px-12 py-4">
                           <div class="text-sm text-gray-700">We don't take any extra charges for any project</div>
                         </td>
-
                       </tr>
                       <tr>
                         <td class="whitespace-nowrap px-4 py-4">
@@ -306,7 +274,6 @@ include("config.php");
                                 <span class="block">Chat with Us</span>
                               </button></div>
                         </td>
-
                       </tr>
                       <tr>
                         <td class="whitespace-nowrap px-4 py-4">
@@ -319,7 +286,6 @@ include("config.php");
                         <td class="whitespace-nowrap px-12 py-4">
                           <div class="text-sm text-gray-700">These Softwares are not suitable for any of the business requriements.</div>
                         </td>
-
                       </tr>
                       <tr>
                         <td class="whitespace-nowrap px-4 py-4">
@@ -349,7 +315,6 @@ include("config.php");
                           </a>
                         </td>
                       </tr>
-
                     </tbody>
                   </table>
                 </div>
@@ -360,7 +325,6 @@ include("config.php");
 
         <!-- project table end  -->
       </div>
-
     </div>
   </div>
   </div>

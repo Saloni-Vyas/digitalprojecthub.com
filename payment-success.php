@@ -218,11 +218,6 @@ $pid = $_REQUEST['pid'];
     </div>
   </div>
   <!-- payment page -->
-
-  <!--	Footer   start-->
-  <!--	Footer   start-->
-
-
   <!-- Scroll to top -->
   <a href="#" class="bg-success text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a>
   <!-- End Scroll To top -->

@@ -19,20 +19,13 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
        </div>
        <button type="submit" style="background: transparent;" class="text-white border-2 border-white py-1 px-8 focus:outline-none rounded text-lg">Search</button>
      </form>
-
    </div>
  </section>
-
-
-
  <div class="container max-w-7xl py-4 px-7 mx-auto">
    <div class="flex flex-row max-w-full justify-center mx-auto">
-
      <div class="bg-red-600 rounded text-white font-bold my-0 py-2 px-6 mx-0 max-w-7xl text-center">New</div>
      <div class="content-center rounded border-2">
-
        <marquee class="align-center mt-2 mr-4" direction="scroll"><b><a rel="nofollow" target="_blank" href="/#contact">Sale your final year project Code / Document send request at <span class="text-red-600">rohitbhure.cse@gmail.com</span> or WhatsApp: <span class="text-red-600">+91-8839178090 😊</span></a></b></marquee>
      </div>
-
    </div>
  </div>

@@ -43,19 +43,15 @@ $result = ($page - 1) * $post_per_page;
       <!--	Header start  -->
       <?php include("include/header.php"); ?>
       <!--	Header end  -->
-
       <!-- search start  -->
       <?php include("include/search.php"); ?>
       <!-- search end -->
-
       <section class="text-gray-600 body-font">
-
         <h5 class="mt-20 mb-10 text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl"><?php echo $search = $_REQUEST['search']; ?> Realated <span style="color: rgb(161,54,130);
 color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">Projects</span></h5>
         <div class="container px-5 py-7 mx-auto">
           <div class="flex flex-wrap -m-4 justify-center">
             <?php
-
             if (isset($_REQUEST['search'])) {
               $techology = $_REQUEST['technology'];
               $search = $_REQUEST['search'];
@@ -64,12 +60,8 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
 
               $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid LIMIT $result,$post_per_page;");
             }
-
-
             $total_posts = mysqli_num_rows($query);
             $total_pages = ceil($post_per_page / $total_posts);
-
-
             while ($row = mysqli_fetch_assoc($query)) {
             ?>
               <div class="lg:w-1/5 md:w-1/2 p-0 w-full shadow-lg m-2 mt-4 rounded-lg">
@@ -96,22 +88,18 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
           </div>
         </div>
       </section>
-
       <?php
       if ($page > 1) {
         $switch = "";
       } else {
         $switch = "cursor-not-allowed";
       }
-
       if ($page < $total_pages) {
         $nswitch = "";
       } else {
         $nswitch = "cursor-not-allowed";
       }
-
       ?>
-
       <div class="flex justify-center mt-10 items-center">
         <a href="?page=<?php echo $page - 1 ?>" class="mx-1 <?php echo $switch; ?> text-sm font-semibold text-gray-900">
           ← Previous
@@ -129,18 +117,14 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
           Next →
         </a>
       </div>
-
       <!--	Footer   start-->
       <?php include("include/footer.php"); ?>
       <!--	Footer   start-->
-
-
       <!-- Scroll to top -->
       <a href="#" class="bg-success text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a>
       <!-- End Scroll To top -->
     </div>
   </div>
-
 </body>
 <script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>

@@ -10,7 +10,7 @@ $ftitle = $_REQUEST['title'];
 
 $merchantId = 'PGTESTPAYUAT'; // sandbox or test merchantId
 $apiKey = '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399'; // sandbox or test APIKEY
-$redirectUrl = 'http://localhost:80/payment-success?pid='.$pid.'&name='.$fname.'&email='.$femail.'&phone='.$fphone.'&title='.$ftitle;
+$redirectUrl = 'http://localhost:80/payment-success?pid=' . $pid . '&name=' . $fname . '&email=' . $femail . '&phone=' . $fphone . '&title=' . $ftitle;
 $callbackUrl = 'http://localhost:80/';
 // Set transaction details
 $name = $fname;
@@ -19,7 +19,6 @@ $mobile = 8839178090;
 $customer_mob = $fphone;
 $amount = $fprice; // amount in INR
 $description = 'Payment for ' . $ftitle;
-
 
 $paymentData = array(
     "merchantId" => $merchantId,
