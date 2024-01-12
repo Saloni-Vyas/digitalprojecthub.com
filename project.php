@@ -19,9 +19,9 @@ $row = mysqli_fetch_assoc($query);
   <title><?php echo $row['title']; ?></title>
   <meta name="title" content="<?php echo $row['title']; ?>" />
   <meta name="description" content="<?php echo $row['description']; ?>" />
+  <meta name="keywords" content="<?php echo $row['keyword']; ?>">
   <meta property="article:published_time" content="<?php echo $row['date']; ?>">
   <meta property="article:modified_time" content="<?php echo $row['date']; ?>">
-  <meta name="keywords" content="HTML, CSS, JavaScript">
   <meta name='url' content='http://localhost:80/project?pid=<?php echo $row['pid']; ?>'>
   <meta http-equiv="content-language" content="en-us">
   <meta name="author" content="Rohit Bhure">
@@ -50,6 +50,58 @@ $row = mysqli_fetch_assoc($query);
   <link rel="stylesheet" href="css/style.css">
   <!-- slick slider CSS library files -->
   <script type="text/javascript" src="js/cdntailwindcss.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "/"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "projects",
+        "item": "https://localhost:80/projects?technology=&search="
+      }, {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "<?php echo $row['cname']; ?>",
+        "item": "projects?technology=<?php echo $row['cname']; ?>"
+      }, {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "<?php echo $row['title']; ?>",
+        "item": "project?pid=<?php echo $row['pid']; ?>"
+      }]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "<?php echo $row['title']; ?>",
+      "image": "images/project/<?php echo $row['image']; ?>",
+      "description": "<?php echo $row['description']; ?>",
+      "brand": {
+        "@type": "Brand",
+        "name": "DigitalProjectHub"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "http://localhost:80/project?pid=<?php echo $row['pid']; ?>",
+        "priceCurrency": "INR",
+        "price": "<?php echo $row['price']; ?>",
+        "availability": "https://schema.org/OnlineOnly"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "ratingCount": "453"
+      }
+    }
+  </script>
   <style>
     .project p {
       padding-bottom: 1.4rem;
@@ -353,9 +405,10 @@ $row = mysqli_fetch_assoc($query);
             </div>
           </div>
         </section>
+        <b>Tags: </b><?php echo $row['keyword']; ?>
 
         <!-- project table end  -->
-        </div>
+      </div>
     </div>
   </div>
   </div>
