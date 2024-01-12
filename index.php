@@ -23,13 +23,18 @@ include("config.php");
   <title>DigitalProjectHub</title>
   <meta name="title" content="DigitalProjectHub" />
   <meta name="description" content="digital project hub is online digital project selling website for learning and study purpose" />
-
+  <meta http-equiv="content-language" content="en-us">
+  <meta name="author" content="Rohit Bhure">
+  <meta name="owner" content="Rohit Bhure">
+  <meta name='reply-to' content='rohitbhure.cse@gmail.com'>
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://digitalprojecthub.com/" />
   <meta property="og:title" content="DigitalProjectHub" />
   <meta property="og:description" content="digital project hub is online digital project selling website for learning and study purpose" />
   <!-- <meta property="og:image" content="https://metatags.io/images/meta-tags.png" /> -->
+  <meta name='og:email' content='rohitbhure.cse@gmail.com'>
+  <meta name='og:phone_number' content='8839178090'>
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
@@ -98,7 +103,7 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
         <div class="mx-auto max-w-4xl mt-10">
           <div class="md:flex md:items-center md:justify-center md:space-x-14">
             <div class="relative h-48 w-48 flex-shrink-0">
-              <img class="relative h-48 w-48 rounded-full object-cover" src="images/team/divyansh.jpg" decoding="async" loading="lazy" alt="" />
+              <img class="relative h-48 w-48 shadow-2xl rounded-full object-cover" src="images/team/divyansh.jpg" decoding="async" loading="lazy" alt="" />
             </div>
             <div class="mt-10 md:mt-0">
               <blockquote>

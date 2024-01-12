@@ -22,7 +22,12 @@ $row = mysqli_fetch_assoc($query);
   <meta property="article:published_time" content="<?php echo $row['date']; ?>">
   <meta property="article:modified_time" content="<?php echo $row['date']; ?>">
   <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name='url' content='http://localhost:80/project?pid=<?php echo $row['pid']; ?>'>
+  <meta http-equiv="content-language" content="en-us">
   <meta name="author" content="Rohit Bhure">
+  <meta name="owner" content="Rohit Bhure">
+  <meta name='category' content='<?php echo $row['cname']; ?>'>
+  <meta name='reply-to' content='rohitbhure.cse@gmail.com'>
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Digitalprojecthub">
@@ -31,6 +36,8 @@ $row = mysqli_fetch_assoc($query);
   <meta property="og:title" content="<?php echo $row['title']; ?>b" />
   <meta property="og:description" content="<?php echo $row['description']; ?>" />
   <meta property="og:image" content="images/project/<?php echo $row['image']; ?>" />
+  <meta name='og:email' content='rohitbhure.cse@gmail.com'>
+  <meta name='og:phone_number' content='8839178090'>
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
@@ -348,7 +355,7 @@ $row = mysqli_fetch_assoc($query);
         </section>
 
         <!-- project table end  -->
-      </div>
+        </div>
     </div>
   </div>
   </div>
