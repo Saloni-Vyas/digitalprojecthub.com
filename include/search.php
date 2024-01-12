@@ -1,5 +1,5 @@
  <!-- banner start -->
- <section class="banner text-gray-600 body-font py-10" style="background: rgb(161,54,130);
+ <section class="banner body-font py-10" style="background: rgb(161,54,130);
 background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">
    <div class="container max-w-5xl px-5 py-10 mx-auto">
      <div class="flex flex-col text-center w-full mb-12">
@@ -21,6 +21,7 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
      </form>
    </div>
  </section>
+
  <div class="container max-w-7xl py-4 px-7 mx-auto">
    <div class="flex flex-row max-w-full justify-center mx-auto">
      <div class="bg-red-600 rounded text-white font-bold my-0 py-2 px-6 mx-0 max-w-7xl text-center">New</div>

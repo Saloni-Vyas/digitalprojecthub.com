@@ -48,9 +48,19 @@ $sha256 = hash("sha256", $payload);
 $final_x_header = $sha256 . '###' . $salt_index;
 $request = json_encode(array('request' => $payloadMain));
 
+// PROD
+// PROD Host URL: https://api.phonepe.com/apis/hermes
+
+// UAT
+// UAT Host URL: https://api-preprod.phonepe.com/apis/pg-sandbox
+// API End Point: /pg/v1/pay
+// UAT PAY API URL: https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay
+
+
 $curl = curl_init();
 curl_setopt_array($curl, [
-    CURLOPT_URL => "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay",
+    CURLOPT_URL => "https://api.phonepe.com/apis/hermes/pg/v1/pay",
+    // CURLOPT_URL => "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,

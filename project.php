@@ -3,6 +3,10 @@ ini_set('session.cache_limiter', 'public');
 session_cache_limiter(false);
 session_start();
 include("config.php");
+
+$pid = $_GET['pid'];
+$query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND pid=$pid");
+$row = mysqli_fetch_assoc($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +15,26 @@ include("config.php");
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DigitalProjectHub.com</title>
+
+  <title><?php echo $row['title']; ?></title>
+  <meta name="title" content="<?php echo $row['title']; ?>" />
+  <meta name="description" content="<?php echo $row['description']; ?>" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://localhost:80/project?pid=<?php echo $row['pid']; ?>" />
+  <meta property="og:title" content="<?php echo $row['title']; ?>b" />
+  <meta property="og:description" content="<?php echo $row['description']; ?>" />
+  <meta property="og:image" content="images/project/<?php echo $row['image']; ?>" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="http://localhost:80/project?pid=<?php echo $row['pid']; ?>" />
+  <meta property="twitter:title" content="<?php echo $row['title']; ?>" />
+  <meta property="twitter:description" content="<?php echo $row['description']; ?>" />
+  <meta property="twitter:image" content="http://localhost:80/images/project/<?php echo $row['image']; ?>" />
+
+
   <link rel="stylesheet" href="css/style.css">
   <!-- slick slider CSS library files -->
   <script type="text/javascript" src="js/cdntailwindcss.js"></script>
@@ -38,10 +61,6 @@ include("config.php");
   <div class="sp mx-auto max-w-7xl px-2 py-0 lg:px-0">
     <div class="overflow-hidden">
       <div class="mb-9 pt-2 md:px-6 md:pt-7 lg:mb-2 lg:p-8 2xl:p-10 2xl:pt-10">
-        <?php
-        $pid = $_GET['pid'];
-        $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND pid=$pid");
-        $row = mysqli_fetch_assoc($query); ?>
         <nav class="flex mb-5" aria-label="Breadcrumb">
           <ol class="inline-flex items-center space-x-1 md:space-x-3">
             <li class="inline-flex items-center">

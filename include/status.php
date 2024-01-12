@@ -13,7 +13,7 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
             </div>
             <div class="flex flex-col items-center justify-center">
                 <dt class="mb-2 text-3xl md:text-4xl font-extrabold"><?php echo $categorycount[0];?>+</dt>
-                <dd class="font-light text-white">Category</dd>
+                <dd class="font-light text-white">Categorys</dd>
             </div>
             <div class="flex flex-col items-center justify-center">
                 <dt class="mb-2 text-3xl md:text-4xl font-extrabold"><?php echo $transactioncount[0];?>+</dt>

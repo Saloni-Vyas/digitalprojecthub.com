@@ -11,7 +11,8 @@ $response = $_POST; // FETCH DATA FROM DEFINE METHOD, IN THIS EXAMPLE I AM DEFIN
 
 $final_x_header = hash("sha256", "/pg/v1/status/" . $response['merchantId'] . "/" . $response['transactionId'] . $key) . "###" . $key_index;
 
-$url = "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/status/" . $response['merchantId'] . "/" . $response['transactionId']; // <TESTING URL>
+$url = "https://api.phonepe.com/apis/hermes/pg/v1/status/" . $response['merchantId'] . "/" . $response['transactionId']; // <TESTING URL>
+// $url = "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/status/" . $response['merchantId'] . "/" . $response['transactionId']; // <TESTING URL>
 
 $headers = array(
   "Content-Type: application/json",

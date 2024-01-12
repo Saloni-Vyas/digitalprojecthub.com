@@ -19,8 +19,24 @@ include("config.php");
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="shortcut icon" href="images/favicon.ico">
 
-  <title>DigitalProjectHub.com</title>
+  <!-- Primary Meta Tags -->
+  <title>DigitalProjectHub</title>
+  <meta name="title" content="DigitalProjectHub" />
+  <meta name="description" content="digital project hub is online digital project selling website for learning and study purpose" />
 
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://digitalprojecthub.com/" />
+  <meta property="og:title" content="DigitalProjectHub" />
+  <meta property="og:description" content="digital project hub is online digital project selling website for learning and study purpose" />
+  <!-- <meta property="og:image" content="https://metatags.io/images/meta-tags.png" /> -->
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://digitalprojecthub.com/" />
+  <meta property="twitter:title" content="DigitalProjectHub" />
+  <meta property="twitter:description" content="digital project hub is online digital project selling website for learning and study purpose" />
+  <!-- <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" /> -->
 
   <!--	Css Link
 	========================================================-->
