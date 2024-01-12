@@ -42,8 +42,6 @@ include("config.php");
 	========================================================-->
   <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="js/cdntailwindcss.js"></script>
-  <!--	Title
-	=========================================================-->
 </head>
 
 <body>

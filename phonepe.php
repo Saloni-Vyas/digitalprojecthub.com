@@ -7,7 +7,7 @@ $femail = $_REQUEST['email'];
 $fphone = $_REQUEST['phone'];
 $fprice = $_REQUEST['price'];
 $ftitle = $_REQUEST['title'];
-
+// TODO MERCHANT ID FOR PHONE PE
 $merchantId = 'PGTESTPAYUAT'; // sandbox or test merchantId
 $apiKey = '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399'; // sandbox or test APIKEY
 $redirectUrl = 'http://localhost:80/payment-success?pid=' . $pid . '&name=' . $fname . '&email=' . $femail . '&phone=' . $fphone . '&title=' . $ftitle;
@@ -59,8 +59,8 @@ $request = json_encode(array('request' => $payloadMain));
 
 $curl = curl_init();
 curl_setopt_array($curl, [
-    CURLOPT_URL => "https://api.phonepe.com/apis/hermes/pg/v1/pay",
-    // CURLOPT_URL => "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay",
+    // CURLOPT_URL => "https://api.phonepe.com/apis/hermes/pg/v1/pay",
+    CURLOPT_URL => "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,

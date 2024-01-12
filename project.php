@@ -19,9 +19,14 @@ $row = mysqli_fetch_assoc($query);
   <title><?php echo $row['title']; ?></title>
   <meta name="title" content="<?php echo $row['title']; ?>" />
   <meta name="description" content="<?php echo $row['description']; ?>" />
-
+  <meta property="article:published_time" content="<?php echo $row['date']; ?>">
+  <meta property="article:modified_time" content="<?php echo $row['date']; ?>">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="Rohit Bhure">
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Digitalprojecthub">
+  <meta property="og:type" content="article" />
   <meta property="og:url" content="http://localhost:80/project?pid=<?php echo $row['pid']; ?>" />
   <meta property="og:title" content="<?php echo $row['title']; ?>b" />
   <meta property="og:description" content="<?php echo $row['description']; ?>" />
