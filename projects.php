@@ -101,19 +101,19 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
       }
       ?>
       <div class="flex justify-center mt-10 items-center">
-        <a href="?page=<?php echo $page - 1 ?>" class="mx-1 <?php echo $switch; ?> text-sm font-semibold text-gray-900">
+        <a href="?technology=&search=<?php echo $search;?>&page=<?php echo $page - 1 ?>" class="mx-1 <?php echo $switch; ?> text-sm font-semibold text-gray-900">
           ← Previous
         </a>
 
         <?php
-        for ($opage = 1; $opage < $total_posts; $opage++) {
+        for ($opage = 1; $opage <=$total_posts; $opage++) {
         ?>
-          <a href="?page=<?php echo $opage; ?>" class="mx-1 flex items-center rounded-md border border-gray-400 px-3 py-1 text-gray-900 hover:scale-105">
+          <a href="?technology=&search=<?php echo $search;?>&page=<?php echo $opage; ?>" class="mx-1 flex items-center rounded-md border border-gray-400 px-3 py-1 text-gray-900 hover:scale-105">
             <?php echo $opage; ?>
           </a>
         <?php }; ?>
 
-        <a href="?page=<?php echo $page + 1 ?>" class="mx-2 <?php echo $nswitch; ?> text-sm font-semibold text-gray-900">
+        <a href="?technology=&search=<?php echo $search;?>&page=<?php echo $page + 1 ?>" class="mx-2 <?php echo $nswitch; ?> text-sm font-semibold text-gray-900">
           Next →
         </a>
       </div>
