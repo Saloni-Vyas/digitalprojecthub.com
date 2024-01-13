@@ -503,7 +503,9 @@ $user = mysqli_fetch_assoc($queryauthor);
         <h5 class="mt-10 mb-10 font-semibold text-2xl">About Author:</h5>
         <div class="p-2 rounded-2xl shadow-lg mx-auto">
           <div class="flex flex-row m-6 items-center">
-            <img class="shadow-lg border-8 border-white" style="border-radius: 50%;box-shadow:  11px 11px 21px #cccccc,
+            <img class="shadow-lg border-4 border-white" style="
+            /* border-radius: 50%; */
+            box-shadow:  11px 11px 21px #cccccc,
              -11px -11px 21px #ffffff;" src="<?php echo $website; ?>/images/user/<?php echo $user['uimg'] ?>" alt="<?php echo $user['uname'] ?>" width="130" height="130" itemprop="image" decoding="async" loading="lazy">
             <div class="ml-10">
 
