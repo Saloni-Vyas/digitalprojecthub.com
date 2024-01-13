@@ -8,7 +8,7 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
     <div class="flex justify-center flex-wrap -m-2">
       <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
         <div class="h-full flex items-center p-4 rounded-lg bg-white">
-          <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="images/team/rohit.jpg" decoding="async"
+          <img alt="team" class="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="images/team/rohit.jpg" decoding="async"
                   loading="lazy">
           <div class="flex-grow">
             <h2 class="text-gray-900 title-font font-medium mb-1">Rohit Bhure</h2>
@@ -18,7 +18,7 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
       </div>
       <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
         <div class="h-full flex items-center p-4 rounded-lg bg-white">
-          <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="images/team/divyansh.jpg" decoding="async"
+          <img alt="team" class="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="images/team/divyansh.jpg" decoding="async"
                   loading="lazy">
           <div class="flex-grow">
             <h2 class="text-gray-900 title-font font-medium mb-1">Divyansh Sharma</h2>

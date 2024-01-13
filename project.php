@@ -7,6 +7,11 @@ include("config.php");
 $pid = $_GET['pid'];
 $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND pid=$pid");
 $row = mysqli_fetch_assoc($query);
+
+
+$uid = $row['author'];
+$queryauthor = mysqli_query($con, "SELECT project.author,user.* FROM project RIGHT JOIN user ON project.author = user.uid WHERE project.author = $uid;");
+$user = mysqli_fetch_assoc($queryauthor);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +20,6 @@ $row = mysqli_fetch_assoc($query);
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title><?php echo $row['title']; ?></title>
   <meta name="title" content="<?php echo $row['title']; ?>" />
   <meta name="description" content="<?php echo $row['description']; ?>" />
@@ -24,10 +28,10 @@ $row = mysqli_fetch_assoc($query);
   <meta property="article:modified_time" content="<?php echo $row['date']; ?>">
   <meta name='url' content='http://localhost:80/project?pid=<?php echo $row['pid']; ?>'>
   <meta http-equiv="content-language" content="en-us">
-  <meta name="author" content="Rohit Bhure">
+  <meta name="author" content="<?php echo $user['uname']; ?>">
   <meta name="owner" content="Rohit Bhure">
   <meta name='category' content='<?php echo $row['cname']; ?>'>
-  <meta name='reply-to' content='rohitbhure.cse@gmail.com'>
+  <meta name='reply-to' content='<?php echo $user['email']; ?>'>
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Digitalprojecthub">
@@ -36,8 +40,8 @@ $row = mysqli_fetch_assoc($query);
   <meta property="og:title" content="<?php echo $row['title']; ?>b" />
   <meta property="og:description" content="<?php echo $row['description']; ?>" />
   <meta property="og:image" content="images/project/<?php echo $row['image']; ?>" />
-  <meta name='og:email' content='rohitbhure.cse@gmail.com'>
-  <meta name='og:phone_number' content='8839178090'>
+  <meta name='og:email' content='<?php echo $user['email']; ?>'>
+  <meta name='og:phone_number' content='<?php echo $user['phone']; ?>'>
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
@@ -50,6 +54,20 @@ $row = mysqli_fetch_assoc($query);
   <link rel="stylesheet" href="css/style.css">
   <!-- slick slider CSS library files -->
   <script type="text/javascript" src="js/cdntailwindcss.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      "name": "<?php echo $user['phone']; ?>",
+      "url": "<?php echo $user['url']; ?>",
+      "image": "http://localhost:80/images/user/<?php echo $user['uimg']; ?>",
+      "jobTitle": "<?php echo $user['type']; ?>",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "DigitalProjectHub"
+      }
+    }
+  </script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
@@ -113,10 +131,6 @@ $row = mysqli_fetch_assoc($query);
     }
 
     @media only screen and (max-width: 600px) {
-      .aw {
-        width: 500px;
-      }
-
       .ptitle {
         font-size: 1.7rem;
       }
@@ -486,30 +500,21 @@ $row = mysqli_fetch_assoc($query);
             <strong><?php echo $row['keyword']; ?></strong>
           </button>
         </div>
-        <?php
-        // SELECT column(s)
-        // FROM tableA
-        // INNER JOIN tableB
-        // O﻿N tableA.col_name = tableB.col_name;
-        $uid = $row['author'];
-        $queryauthor = mysqli_query($con, "SELECT project.*,user.* FROM project RIGHT JOIN user ON project.author = user.uid WHERE project.author = $uid;");
-        $user = mysqli_fetch_assoc($queryauthor);
-        echo "<pre>";
-        print_r($user);
-        echo "</pre>";
-        ?>
         <!-- team -->
         <h5 class="mt-10 mb-10 font-semibold text-2xl">About Author:</h5>
         <div class="p-2 shadow-lg rounded-lg mx-auto">
-          <div class="flex flex-row m-10 items-center">
-            <div class="object-cover object-center"><img class="shadow-lg aw" style="border-radius: 50%;" src="images/user/<?php $user['uimg'] ?>" alt="<?php $user['title'] ?>" width="150" height="150" itemprop="image" decoding="async" loading="lazy"></div>
+          <div class="flex flex-row m-6 items-center">
+            <img class="shadow-lg" style="border-radius: 50%;" src="images/user/<?php echo $user['uimg'] ?>" alt="<?php echo $user['title'] ?>" width="100" height="100" itemprop="image" decoding="async" loading="lazy">
             <div class="ml-10">
 
-              <a href="/" rel="author"><span class="fn"><?php $user['uname']; ?></span></a>
+              <a href="/" rel="author"><span class="text-xl font-semibold"><?php echo $user['uname']; ?></span></a>
               <div class=" mt-2 ">
 
-                <?php $user['udescription'] ?>
-                <span class="mt-1"><a href="<?php $user['url'] ?>"><?php $user['url'] ?></a></span>
+                <?php echo $user['udescription'] ?>
+                <div class="mt-4 text-gray-700">
+
+                  <em><a href="<?php echo $user['url'] ?>"><?php echo $user['url'] ?></a></em>
+                </div>
               </div>
             </div>
 
