@@ -19,7 +19,7 @@ $row = mysqli_fetch_assoc($query);
   <title><?php echo $row['title']; ?></title>
   <meta name="title" content="<?php echo $row['title']; ?>" />
   <meta name="description" content="<?php echo $row['description']; ?>" />
-  <meta name="keywords" content="<?php echo $row['keyword']; ?>">
+  <meta name="a" content="<?php echo $row['keyword']; ?>">
   <meta property="article:published_time" content="<?php echo $row['date']; ?>">
   <meta property="article:modified_time" content="<?php echo $row['date']; ?>">
   <meta name='url' content='http://localhost:80/project?pid=<?php echo $row['pid']; ?>'>
@@ -111,6 +111,20 @@ $row = mysqli_fetch_assoc($query);
     h2 {
       padding-bottom: 1rem;
     }
+
+    @media only screen and (max-width: 600px) {
+      .aw {
+        width: 500px;
+      }
+
+      .ptitle {
+        font-size: 1.7rem;
+      }
+
+      .prw {
+        width: 90vw;
+      }
+    }
   </style>
 </head>
 
@@ -122,7 +136,7 @@ $row = mysqli_fetch_assoc($query);
   <?php include("include/search.php"); ?>
   <!-- search end -->
 
-  <div class="sp mx-auto max-w-7xl px-2 py-0 lg:px-0">
+  <div class="sp mx-auto max-w-7xl px-2 py-0 lg:px-0 prw">
     <div class="overflow-hidden">
       <div class="mb-9 pt-2 md:px-6 md:pt-7 lg:mb-2 lg:p-8 2xl:p-10 2xl:pt-10">
         <nav class="flex mb-5" aria-label="Breadcrumb">
@@ -240,7 +254,7 @@ $row = mysqli_fetch_assoc($query);
               <div>
                 <span class="text-gray-600">Posted on <?php echo date('F jS, Y', strtotime($row['date'])); ?></span>
               </div>
-              <h2 class="mt-2 text-2x1 font-semibold md:text-xl xl:text-2xl">
+              <h2 class="mt-2 text-2x1 font-semibold md:text-xl xl:text-2xl ptitle">
                 <?php echo $row['title']; ?>
               </h2>
               <div class="flex items-center">
@@ -330,6 +344,41 @@ $row = mysqli_fetch_assoc($query);
                         </td>
                         <td class="whitespace-nowrap px-12 py-4">
                           <div class="text-sm text-gray-700"><?php echo $row['title']; ?></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="whitespace-nowrap px-4 py-4">
+                          <div class="flex items-center">
+                            <div>
+                              <div class="text-sm text-gray-700"><b>ratings</b></div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="whitespace-nowrap px-12 py-4">
+                          <div class="text-sm text-gray-700">
+                            <div class="flex items-center">
+                              <?php echo $row['ratingvalue']; ?> <svg class="ml-1 w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                              </svg>
+                              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                              </svg>
+                              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                              </svg>
+                              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                              </svg>
+                              <svg class="mr-1 w-5 h-5 text-gray-300 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                              </svg> <?php echo $row['ratingcount'] . ' ratings'; ?>
+                            </div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
@@ -430,11 +479,53 @@ $row = mysqli_fetch_assoc($query);
             </div>
           </div>
         </section>
-        <b>Tags: </b><?php echo $row['keyword']; ?>
 
-        <!-- project table end  -->
+        <div class="mt-4">
+          <b>Tags: </b>
+          <button type="button" class="ml-2 rounded-md bg-black align-left px-3 py-2 mb-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+            <strong><?php echo $row['keyword']; ?></strong>
+          </button>
+        </div>
+        <?php
+        // SELECT column(s)
+        // FROM tableA
+        // INNER JOIN tableB
+        // O﻿N tableA.col_name = tableB.col_name;
+        $uid = $row['author'];
+        $queryauthor = mysqli_query($con, "SELECT project.*,user.* FROM project RIGHT JOIN user ON project.author = user.uid WHERE project.author = $uid;");
+        $user = mysqli_fetch_assoc($queryauthor);
+        echo "<pre>";
+        print_r($user);
+        echo "</pre>";
+        ?>
+        <!-- team -->
+        <h5 class="mt-10 mb-10 font-semibold text-2xl">About Author:</h5>
+        <div class="p-2 shadow-lg rounded-lg mx-auto">
+          <div class="flex flex-row m-10 items-center">
+            <div class="object-cover object-center"><img class="shadow-lg aw" style="border-radius: 50%;" src="images/user/<?php $user['uimg'] ?>" alt="<?php $user['title'] ?>" width="150" height="150" itemprop="image" decoding="async" loading="lazy"></div>
+            <div class="ml-10">
+
+              <a href="/" rel="author"><span class="fn"><?php $user['uname']; ?></span></a>
+              <div class=" mt-2 ">
+
+                <?php $user['udescription'] ?>
+                <span class="mt-1"><a href="<?php $user['url'] ?>"><?php $user['url'] ?></a></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- team -->
       </div>
     </div>
+
+  </div>
+  </div>
+  </section>
+
+  <!-- project table end  -->
+  </div>
+  </div>
   </div>
   </div>
 
