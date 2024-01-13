@@ -3,7 +3,6 @@ ini_set('session.cache_limiter', 'public');
 session_cache_limiter(false);
 session_start();
 include("config.php");
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,11 +16,11 @@ include("config.php");
 
   <!-- Meta Tags -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="shortcut icon" href="<?php echo $website;?>/images/favicon.ico">
 
   <!-- Primary Meta Tags -->
-  <title>DigitalProjectHub</title>
-  <meta name="title" content="DigitalProjectHub" />
+  <title><?php echo $websitename;?></title>
+  <meta name="title" content="<?php echo $websitename;?>" />
   <meta name="description" content="digital project hub is online digital project selling website for learning and study purpose" />
   <meta http-equiv="content-language" content="en-us">
   <meta name="author" content="Rohit Bhure">
@@ -29,8 +28,8 @@ include("config.php");
   <meta name='reply-to' content='rohitbhure.cse@gmail.com'>
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://digitalprojecthub.com/" />
-  <meta property="og:title" content="DigitalProjectHub" />
+  <meta property="og:url" content="<?php echo $website;?>" />
+  <meta property="og:title" content="<?php echo $websitename;?>" />
   <meta property="og:description" content="digital project hub is online digital project selling website for learning and study purpose" />
   <!-- <meta property="og:image" content="https://metatags.io/images/meta-tags.png" /> -->
   <meta name='og:email' content='rohitbhure.cse@gmail.com'>
@@ -38,8 +37,8 @@ include("config.php");
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://digitalprojecthub.com/" />
-  <meta property="twitter:title" content="DigitalProjectHub" />
+  <meta property="twitter:url" content="<?php echo $website;?>" />
+  <meta property="twitter:title" content="<?php echo $websitename;?>"/>
   <meta property="twitter:description" content="digital project hub is online digital project selling website for learning and study purpose" />
   <!-- <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" /> -->
 
@@ -61,7 +60,6 @@ include("config.php");
       <?php include("include/search.php"); ?>
       <!-- search end -->
 
-
       <!-- project catgory start  -->
       <?php include("include/catagory.php"); ?>
       <!-- project catgory end -->
@@ -71,10 +69,6 @@ include("config.php");
       <!-- recent project  -->
       <?php include("include/recentproject.php"); ?>
       <!-- recent project  -->
-
-      <!-- statisc start  -->
-
-      <!-- statisc end  -->
 
       <!-- team start -->
       <?php include("include/team.php"); ?>
@@ -103,12 +97,12 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
         <div class="mx-auto max-w-4xl mt-10">
           <div class="md:flex md:items-center md:justify-center md:space-x-14">
             <div class="relative h-48 w-48 flex-shrink-0">
-              <img class="relative h-48 w-48 shadow-2xl rounded-full object-cover" src="images/team/divyansh.jpg" decoding="async" loading="lazy" alt="" />
+              <img class="relative h-48 w-48 shadow-2xl rounded-full object-cover" src="<?php echo $website; ?>/images/team/divyansh.jpg" decoding="async" loading="lazy" alt="" />
             </div>
             <div class="mt-10 md:mt-0">
               <blockquote>
                 <p class="text-xl text-black">
-                  “DigitalProjectHub has truly been a game-changer for my academic journey. The variety and quality of projects available on the website surpassed my expectations. The user-friendly interface made it easy for me to find and purchase the perfect project for my computer science course.”
+                  “<?php echo $websitename;?> has truly been a game-changer for my academic journey. The variety and quality of projects available on the website surpassed my expectations. The user-friendly interface made it easy for me to find and purchase the perfect project for my computer science course.”
                 </p>
               </blockquote>
               <p class="mt-7 text-lg font-semibold text-black">Rahul Verma</p>
@@ -119,14 +113,11 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
       </section>
 
       <!-- testinomial end -->
+
       <!--	Footer   start-->
       <?php include("include/footer.php"); ?>
       <!--	Footer   start-->
 
-
-      <!-- Scroll to top -->
-      <a href="#" class="bg-success text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a>
-      <!-- End Scroll To top -->
     </div>
   </div>
   <!-- Wrapper End -->

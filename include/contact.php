@@ -5,7 +5,7 @@
 color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">s</span></h3>
         </div>
         <p class="mt-4 pb-4 text-base leading-relaxed text-center text-gray-600">
-            Connect with us – because at DigitalProjectHub, every inquiry is a conversation waiting to happen. Your questions, our solutions, let’s make it happen together!
+            Connect with us – because at <?php echo $websitename;?>, every inquiry is a conversation waiting to happen. Your questions, our solutions, let’s make it happen together!
         </p>
         <form action="contact" method="post" name="contact" class="space-y-8">
             <div>

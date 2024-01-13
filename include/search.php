@@ -7,7 +7,7 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
        <p style="color: #fff" class="lg:w-2/3 mx-auto leading-relaxed text-base">where innovation meets execution, and bugs are just unexpected features waiting to be discovered!</p>
      </div>
 
-     <form name="search" method="post" action="projects" class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+     <form name="search" method="post" action="<?php echo $website;?>/projects" class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
        <div class="relative flex-grow w-full">
          <select style="height:42px" id="technology" name="technology" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
            <option style="color: #000" value="">Select Technology</option>
@@ -26,7 +26,7 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
    <div class="flex flex-row max-w-full justify-center mx-auto">
      <div class="bg-red-600 rounded text-white font-bold my-0 align-start py-1 px-6 mx-0 max-w-7xl text-center">New</div>
      <div class="content-center">
-       <marquee class="align-center mt-2 mr-4 pb-1 shadow-lg" direction="scroll"><b><a href="/#contact">Sale your final year project Code / Document send request at <span class="text-red-600">rohitbhure.cse@gmail.com</span> or WhatsApp: <span class="text-red-600">+91-8839178090 😊</span></a></b></marquee>
+       <marquee class="align-center mt-2 mr-4 pb-1 shadow-lg" direction="scroll"><a href="<?php echo $website;?>/#contact">Sale your final year project Code / Document send request at <b>rohitbhure.cse@gmail.com</b> or WhatsApp: <b>+91-8839178090</b></a></marquee>
      </div>
    </div>
  </div>

@@ -42,7 +42,7 @@ $search = $_REQUEST['search'];
 
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Digitalprojecthub">
+  <meta property="og:site_name" content="<?php echo $websitename;?>">
   <meta property="og:type" content="article" />
   <meta property="og:url" content="http://localhost:80/project?technology=<?php echo $techology; ?>&search=<?php echo $search; ?>&page=<?php echo $page; ?>" />
   <meta property="og:title" content="<?php echo $_REQUEST['technology'] . ' | '; ?>Projects" />
@@ -89,8 +89,8 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
             while ($row = mysqli_fetch_assoc($query)) {
             ?>
               <div class="lg:w-1/5 md:w-1/2 p-0 w-full shadow-lg m-2 mt-4 rounded-lg">
-                <a href="project?pid=<?php echo $row['pid']; ?>" class="block relative rounded overflow-hidden">
-                  <img alt="ecommerce" class="object-cover object-center w-full h-full block" decoding="async" loading="lazy" src="images/project/<?php echo $row['image']; ?>">
+                <a href="<?php echo $website;?>/project?pid=<?php echo $row['pid']; ?>" class="block relative rounded overflow-hidden">
+                  <img alt="ecommerce" class="object-cover object-center w-full h-full block" decoding="async" loading="lazy" src="<?php echo $website; ?>/images/project/<?php echo $row['image']; ?>">
                   <div class="mt-4 p-3">
                     <div class="flex flex-row justify-between">
                       <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><?php echo $row['cname']; ?></h3>
@@ -127,29 +127,27 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
       }
       ?>
       <div class="flex justify-center mt-10 items-center">
-        <a href="?technology=<?php echo $techology; ?>&search=<?php echo $search; ?>&page=<?php echo $page - 1 ?>" style="<?php echo $switch; ?>" class="mx-1 text-sm font-semibold text-gray-900">
+        <a href="<?php echo $website;?>/projects?technology=<?php echo $techology; ?>&search=<?php echo $search; ?>&page=<?php echo $page - 1 ?>" style="<?php echo $switch; ?>" class="mx-1 text-sm font-semibold text-gray-900">
           ← Previous
         </a>
 
         <?php
         for ($opage = 1; $opage <= $total_posts; $opage++) {
         ?>
-          <a href="?technology=<?php echo $techology; ?>&search=<?php echo $search; ?>&page=<?php echo $opage; ?>" class="mx-1 flex items-center rounded-md border border-gray-400 px-3 py-1 text-gray-900 hover:scale-105">
+          <a href="<?php echo $website;?>/projects?technology=<?php echo $techology; ?>&search=<?php echo $search; ?>&page=<?php echo $opage; ?>" class="mx-1 flex items-center rounded-md border border-gray-400 px-3 py-1 text-gray-900 hover:scale-105">
             <?php echo $opage; ?>
           </a>
         <?php }; ?>
         <!-- pagination -->
 
-        <a href="?technology=<?php echo $techology; ?>&search=<?php echo $search; ?>&page=<?php echo $page + 1 ?>" style="<?php echo $nswitch; ?>" class="mx-2 text-sm font-semibold text-gray-900">
+        <a href="<?php echo $website;?>/projects?technology=<?php echo $techology; ?>&search=<?php echo $search; ?>&page=<?php echo $page + 1 ?>" style="<?php echo $nswitch; ?>" class="mx-2 text-sm font-semibold text-gray-900">
           Next →
         </a>
       </div>
       <!--	Footer   start-->
       <?php include("include/footer.php"); ?>
       <!--	Footer   start-->
-      <!-- Scroll to top -->
-      <a href="#" class="bg-success text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a>
-      <!-- End Scroll To top -->
+
     </div>
   </div>
 </body>

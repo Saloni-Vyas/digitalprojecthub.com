@@ -11,5 +11,5 @@ $subject = $_REQUEST['subject'];
 $message = $_REQUEST['message'];
 
 mysqli_query($con, "INSERT INTO `contact` (`name`,`email`,`phone`,`subject`,`message`) VALUES('$name','$email','$phone','$subject','$message');");
-header('Location: ' . '/');
+header('Location: ' . $website);
 exit;
