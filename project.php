@@ -233,6 +233,8 @@ $row = mysqli_fetch_assoc($query);
             <div class="pb-2">
               <button type="button" class="rounded-md bg-black px-3 py-2 mb-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                 <?php echo $row['cname']; ?>
+              </button><button type="button" class="ml-2 rounded-md bg-black px-3 py-2 mb-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+                Views: <?php echo $row['views']; ?>
               </button>
 
               <div>
@@ -266,7 +268,7 @@ $row = mysqli_fetch_assoc($query);
 
 
 
-              <h3 class="mt-3 text-xl font-bold leading-tight text-black sm:text-4xl lg:text-3xl"><span class="text-green-800">₹ </span><?php echo $row['price']; ?> INR</h3>
+              <h3 class="mt-3 text-xl font-bold leading-tight text-black sm:text-4xl lg:text-2xl"><span class="text-xl">₹ </span><?php echo $row['price']; ?> INR</h3>
             </div>
             <div class="space-y-2.5 md:space-y-3.5 lg:pt-2 xl:pt-4">
 
@@ -439,7 +441,11 @@ $row = mysqli_fetch_assoc($query);
   <!--	Footer   start-->
   <?php include("include/footer.php"); ?>
   <!--	Footer   start-->
-
+  <?php
+  $viewsplus = $row["views"];
+  ++$viewsplus;
+  mysqli_query($con, "UPDATE project SET views=$viewsplus WHERE pid=$pid");
+  ?>
 
   <!-- Scroll to top -->
   <a href="#" class="bg-success text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a>

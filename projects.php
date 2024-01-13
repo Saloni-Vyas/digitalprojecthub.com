@@ -99,7 +99,7 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
                     <h2 class="text-gray-900 text-base font-bold"><?php echo $row['title']; ?></h2>
                     <div class="flex flex-row mt-2 justify-end">
                       <button type="button" class="inline-flex items-center justify-center rounded-md bg-green-500 mx-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
-                        <span class="block text-xs">₹ <?php echo $row['price']; ?> INR</span>
+                        <span class="block text-sm">₹ <?php echo $row['price']; ?> INR</span>
                       </button>
                       <button type="button" class="inline-flex items-center justify-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                         <span class="block text-xs">View</span>
