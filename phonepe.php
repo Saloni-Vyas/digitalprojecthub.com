@@ -1,4 +1,3 @@
-
 <?php
 // Replace these with your actual PhonePe API credentials
 $pid = $_REQUEST['pid'];
@@ -7,11 +6,12 @@ $femail = $_REQUEST['email'];
 $fphone = $_REQUEST['phone'];
 $fprice = $_REQUEST['price'];
 $ftitle = $_REQUEST['title'];
-
+$websitephone = 'http://localhost:80';
+// TODO MERCHANT ID FOR PHONE PE
 $merchantId = 'PGTESTPAYUAT'; // sandbox or test merchantId
 $apiKey = '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399'; // sandbox or test APIKEY
-$redirectUrl = 'http://localhost:80/payment-success?pid='.$pid.'&name='.$fname.'&email='.$femail.'&phone='.$fphone.'&title='.$ftitle;
-$callbackUrl = 'http://localhost:80/';
+$redirectUrl = $websitephone . '/payment-success?pid=' . $pid . '&name=' . $fname . '&email=' . $femail . '&phone=' . $fphone . '&title=' . $ftitle;
+$callbackUrl = $websitephone . '/';
 // Set transaction details
 $name = $fname;
 $email = $femail;
@@ -19,7 +19,6 @@ $mobile = 8839178090;
 $customer_mob = $fphone;
 $amount = $fprice; // amount in INR
 $description = 'Payment for ' . $ftitle;
-
 
 $paymentData = array(
     "merchantId" => $merchantId,
@@ -49,8 +48,18 @@ $sha256 = hash("sha256", $payload);
 $final_x_header = $sha256 . '###' . $salt_index;
 $request = json_encode(array('request' => $payloadMain));
 
+// PROD
+// PROD Host URL: https://api.phonepe.com/apis/hermes
+
+// UAT
+// UAT Host URL: https://api-preprod.phonepe.com/apis/pg-sandbox
+// API End Point: /pg/v1/pay
+// UAT PAY API URL: https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay
+
+
 $curl = curl_init();
 curl_setopt_array($curl, [
+    // CURLOPT_URL => "https://api.phonepe.com/apis/hermes/pg/v1/pay",
     CURLOPT_URL => "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
@@ -84,5 +93,3 @@ if ($err) {
         header('Location:' . $payUrl);
     }
 }
-
-?>

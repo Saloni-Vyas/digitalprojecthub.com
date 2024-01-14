@@ -4,34 +4,3 @@
     box-sizing: border-box;
 }
 
-.project h1{
-   font-size: 2rem;
-   font-weight: 700;
-   padding-top: 1rem;
-}
-
-.project h2{
-    font-size: 1.7rem;
-    font-weight: 700;
-    padding-top: 1rem;
- }
-
-.project h3{
-    font-size: 1.5rem;
-    padding-top: 1rem;
- }
-
-.project h4{
-    font-size: 1.3rem;
-    padding-top: 1rem;
- }
-
-.project h5{
-    font-size: 1.1rem;
-    padding-top: 1rem;
- }
-
-.project h6{
-    font-size: 1rem;
-    padding-top: 1rem;
- }
