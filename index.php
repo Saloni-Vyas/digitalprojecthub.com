@@ -44,7 +44,6 @@ include("config.php");
 
   <!--	Css Link
 	========================================================-->
-  <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="js/cdntailwindcss.js"></script>
 </head>
 
@@ -105,6 +104,8 @@ include("config.php");
 ============================================================-->
 </body>
 <script type="text/javascript" src="js/custom.js"></script>
+<link rel="stylesheet" href="css/style.css">
+
 <!-- <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
   google.load('visualization', '1', {

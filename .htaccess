@@ -11,5 +11,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 
 #Rewrite Rule
 RewriteRule ^([^\.]+)$ $1.php [NC,L] 
-
+# RewriteRule ^project/([^/]+)$ /project?p=$1 [L]
 </IfModule>
