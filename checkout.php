@@ -11,7 +11,7 @@ include("config.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D<?php echo $websitename;?></title>
+    <title>D<?php echo webname;?></title>
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/cdntailwindcss.js"></script>
 </head>
@@ -29,7 +29,7 @@ include("config.php");
             <nav class="flex mb-5" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
-                        <a href="<?php echo $website;?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                        <a href="<?php echo weburl;?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 h-4 w-4">
                                 <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -42,7 +42,7 @@ include("config.php");
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                                 <polyline points="9 18 15 12 9 6"></polyline>
                             </svg>
-                            <a href="<?php echo $website;?>/projects.php?technology=&search=" class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                            <a href="<?php echo weburl;?>/projects.php?technology=&search=" class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                                 projects
                             </a>
                         </div>
@@ -52,7 +52,7 @@ include("config.php");
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                                 <polyline points="9 18 15 12 9 6"></polyline>
                             </svg>
-                            <a href="<?php echo $website;?>/projects.php?technology=<?php echo $row['cname']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                            <a href="<?php echo weburl;?>/projects.php?technology=<?php echo $row['cname']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
                                 <span class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                                     <?php echo $row['cname']; ?>
                                 </span>
@@ -63,7 +63,7 @@ include("config.php");
                 </ol>
             </nav>
 
-            <form name="checkout" method="post" action="<?php echo $website;?>/phonepe?pid=<?php echo $pid; ?>">
+            <form name="checkout" method="post" action="<?php echo weburl;?>/phonepe?pid=<?php echo $pid; ?>">
                 <div class="overflow-hidden rounded-xl bg-white p-4 shadow">
                     <div class="mb-4 flex items-center rounded-lg py-2">
                         <div class="mr-2 rounded-full bg-gray-100  p-2 text-black">

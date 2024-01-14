@@ -5,13 +5,6 @@ session_start();
 include("config.php");
 // TODO all this to index.php
 
-$pid = $_GET['pid'];
-$query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND pid=$pid");
-$row = mysqli_fetch_assoc($query);
-
-$uid = $row['author'];
-$queryauthor = mysqli_query($con, "SELECT project.author,user.* FROM project RIGHT JOIN user ON project.author = user.uid WHERE project.author = $uid;");
-$user = mysqli_fetch_assoc($queryauthor);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,126 +13,140 @@ $user = mysqli_fetch_assoc($queryauthor);
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php echo $row['title']; ?></title>
-  <meta name="title" content="<?php echo $row['title']; ?>" />
-  <meta name="description" content="<?php echo $row['description']; ?>" />
-  <meta name="a" content="<?php echo $row['keyword']; ?>">
-  <meta property="article:published_time" content="<?php echo $row['date']; ?>">
-  <meta property="article:modified_time" content="<?php echo $row['date']; ?>">
-  <meta name='url' content='<?php echo $website ?>/project?pid=<?php echo $row['pid']; ?>'>
-  <meta http-equiv="content-language" content="en-us">
-  <meta name="author" content="<?php echo $user['uname']; ?>">
-  <meta name="owner" content="Rohit Bhure">
-  <meta name='category' content='<?php echo $row['cname']; ?>'>
-  <meta name='reply-to' content='<?php echo $user['email']; ?>'>
-  <!-- Open Graph / Facebook -->
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="<?php echo $websitename;?>">
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="<?php echo $website; ?>/project?pid=<?php echo $row['pid']; ?>" />
-  <meta property="og:title" content="<?php echo $row['title']; ?>b" />
-  <meta property="og:description" content="<?php echo $row['description']; ?>" />
-  <meta property="og:image" content="<?php echo $website; ?>/images/project/<?php echo $row['image']; ?>" />
-  <meta name='og:email' content='<?php echo $user['email']; ?>'>
-  <meta name='og:phone_number' content='<?php echo $user['phone']; ?>'>
+  <?php
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="<?php echo $website; ?>/project?pid=<?php echo $row['pid']; ?>" />
-  <meta property="twitter:title" content="<?php echo $row['title']; ?>" />
-  <meta property="twitter:description" content="<?php echo $row['description']; ?>" />
-  <meta property="twitter:image" content="<?php echo $website; ?>/images/project/<?php echo $row['image']; ?>" />
+  if (isset($_REQUEST['pid'])) {
+    $pid = $_REQUEST['pid'];
+    $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND pid=$pid");
+    $row = mysqli_fetch_assoc($query);
+    
+    if ($pid == $row['pid']) {
+    $uid = $row['author'];
+$queryauthor = mysqli_query($con, "SELECT project.author,user.* FROM project RIGHT JOIN user ON project.author = user.uid WHERE project.author = $uid;");
+$user = mysqli_fetch_assoc($queryauthor);
+  ?>
+      <!-- code here  -->
+      <!-- code here  -->
+      <title><?php echo $row['title']; ?></title>
+      <meta name="title" content="<?php echo $row['title']; ?>" />
+      <meta name="description" content="<?php echo $row['description']; ?>" />
+      <meta name="keyword" content="<?php echo $row['keyword']; ?>">
+      <meta property="article:published_time" content="<?php echo $row['date']; ?>">
+      <meta property="article:modified_time" content="<?php echo $row['date']; ?>">
+      <meta name='url' content='<?php echo $website ?>/project?pid=<?php echo $row['pid']; ?>'>
+      <meta http-equiv="content-language" content="en-us">
+      <meta name="author" content="<?php echo $user['uname']; ?>">
+      <meta name="owner" content="Rohit Bhure">
+      <meta name='category' content='<?php echo $row['cname']; ?>'>
+      <meta name='reply-to' content='<?php echo $user['email']; ?>'>
+      <!-- Open Graph / Facebook -->
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="<?php echo webname;?>">
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="<?php echo weburl;?>/project?pid=<?php echo $row['pid']; ?>" />
+      <meta property="og:title" content="<?php echo $row['title']; ?>b" />
+      <meta property="og:description" content="<?php echo $row['description']; ?>" />
+      <meta property="og:image" content="<?php echo weburl;?>/images/project/<?php echo $row['image']; ?>" />
+      <meta name='og:email' content='<?php echo $user['email']; ?>'>
+      <meta name='og:phone_number' content='<?php echo $user['phone']; ?>'>
+
+      <!-- Twitter -->
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="<?php echo weburl;?>/project?pid=<?php echo $row['pid']; ?>" />
+      <meta property="twitter:title" content="<?php echo $row['title']; ?>" />
+      <meta property="twitter:description" content="<?php echo $row['description']; ?>" />
+      <meta property="twitter:image" content="<?php echo weburl;?>/images/project/<?php echo $row['image']; ?>" />
 
 
-  <link rel="stylesheet" href="css/style.css">
-  <!-- slick slider CSS library files -->
-  <script type="text/javascript" src="js/cdntailwindcss.js"></script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Person",
-      "name": "<?php echo $user['phone']; ?>",
-      "url": "<?php echo $user['url']; ?>",
-      "image": "<?php echo $website; ?>/images/user/<?php echo $user['uimg']; ?>",
-      "jobTitle": "<?php echo $user['type']; ?>",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "<?php echo $websitename;?>"
-      }
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "/"
-      }, {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "projects",
-        "item": "<?php echo $website; ?>/projects?technology=&search="
-      }, {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "<?php echo $row['cname']; ?>",
-        "item": "<?php echo $website; ?>/projects?technology=<?php echo $row['cname']; ?>"
-      }, {
-        "@type": "ListItem",
-        "position": 4,
-        "name": "<?php echo $row['title']; ?>",
-        "item": "<?php echo $website; ?>/project?pid=<?php echo $row['pid']; ?>"
-      }]
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "<?php echo $row['title']; ?>",
-      "image": "images/project/<?php echo $row['image']; ?>",
-      "description": "<?php echo $row['description']; ?>",
-      "brand": {
-        "@type": "Brand",
-        "name": "<?php echo $websitename;?>"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "<?php echo $website; ?>/project?pid=<?php echo $row['pid']; ?>",
-        "priceCurrency": "INR",
-        "price": "<?php echo $row['price']; ?>",
-        "availability": "https://schema.org/OnlineOnly"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "<?php echo $row['ratingvalue']; ?>",
-        "ratingCount": "<?php echo $row['ratingcount']; ?>"
-      }
-    }
-  </script>
-  <style>
-    .project p {
-      padding-bottom: 1.4rem;
-    }
+      <link rel="stylesheet" href="css/style.css">
+      <!-- slick slider CSS library files -->
+      <script type="text/javascript" src="js/cdntailwindcss.js"></script>
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "Person",
+          "name": "<?php echo $user['phone']; ?>",
+          "url": "<?php echo $user['url']; ?>",
+          "image": "<?php echo weburl;?>/images/user/<?php echo $user['uimg']; ?>",
+          "jobTitle": "<?php echo $user['type']; ?>",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "<?php echo webname;?>"
+          }
+        }
+      </script>
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "/"
+          }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "projects",
+            "item": "<?php echo weburl;?>/projects?technology=&search="
+          }, {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "<?php echo $row['cname']; ?>",
+            "item": "<?php echo weburl;?>/projects?technology=<?php echo $row['cname']; ?>"
+          }, {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "<?php echo $row['title']; ?>",
+            "item": "<?php echo weburl;?>/project?pid=<?php echo $row['pid']; ?>"
+          }]
+        }
+      </script>
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "Product",
+          "name": "<?php echo $row['title']; ?>",
+          "image": "images/project/<?php echo $row['image']; ?>",
+          "description": "<?php echo $row['description']; ?>",
+          "brand": {
+            "@type": "Brand",
+            "name": "<?php echo webname;?>"
+          },
+          "offers": {
+            "@type": "Offer",
+            "url": "<?php echo weburl;?>/project?pid=<?php echo $row['pid']; ?>",
+            "priceCurrency": "INR",
+            "price": "<?php echo $row['price']; ?>",
+            "availability": "https://schema.org/OnlineOnly"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "<?php echo $row['ratingvalue']; ?>",
+            "ratingCount": "<?php echo $row['ratingcount']; ?>"
+          }
+        }
+      </script>
+      <style>
+        .project p {
+          padding-bottom: 1.4rem;
+        }
 
-    .project h1,
-    h2 {
-      padding-bottom: 1rem;
-    }
+        .project h1,
+        h2 {
+          padding-bottom: 1rem;
+        }
 
-    @media only screen and (max-width: 600px) {
-      .ptitle {
-        font-size: 1.7rem;
-      }
+        @media only screen and (max-width: 600px) {
+          .ptitle {
+            font-size: 1.7rem;
+          }
 
-      .prw {
-        width: 90vw;
-      }
-    }
-  </style>
+          .prw {
+            width: 90vw;
+          }
+        }
+      </style>
 </head>
 
 <body>
@@ -156,7 +163,7 @@ $user = mysqli_fetch_assoc($queryauthor);
         <nav class="flex mb-5" aria-label="Breadcrumb">
           <ol class="inline-flex items-center space-x-1 md:space-x-3">
             <li class="inline-flex items-center">
-              <a href="<?php echo $website; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
+              <a href="<?php echo weburl;?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 h-4 w-4">
                   <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -169,7 +176,7 @@ $user = mysqli_fetch_assoc($queryauthor);
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="<?php echo $website; ?>/projects?technology=&search=" class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="<?php echo weburl;?>/projects?technology=&search=" class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   projects
                 </a>
               </div>
@@ -179,7 +186,7 @@ $user = mysqli_fetch_assoc($queryauthor);
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="<?php echo $website; ?>/projects?technology=<?php echo $row['cname']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="<?php echo weburl;?>/projects?technology=<?php echo $row['cname']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   <span class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                     <?php echo $row['cname']; ?>
                   </span>
@@ -191,7 +198,7 @@ $user = mysqli_fetch_assoc($queryauthor);
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="<?php echo $website; ?>/project?pid=<?php echo $row['pid']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="<?php echo weburl;?>/project?pid=<?php echo $row['pid']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   <span class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                     <?php echo $row['title']; ?>
                   </span>
@@ -210,23 +217,23 @@ $user = mysqli_fetch_assoc($queryauthor);
                 <!-- Item 1 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                   <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-                  <img src="<?php echo $website; ?>/images/project/<?php echo $row['image']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
+                  <img src="<?php echo weburl;?>/images/project/<?php echo $row['image']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
                 </div>
                 <!-- Item 2 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <img src="<?php echo $website; ?>/images/project/<?php echo $row['image_1']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
+                  <img src="<?php echo weburl;?>/images/project/<?php echo $row['image_1']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
                 </div>
                 <!-- Item 3 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <img src="<?php echo $website; ?>/images/project/<?php echo $row['image_2']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
+                  <img src="<?php echo weburl;?>/images/project/<?php echo $row['image_2']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
                 </div>
                 <!-- Item 4 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <img src="<?php echo $website; ?>/images/project/<?php echo $row['image_3']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
+                  <img src="<?php echo weburl;?>/images/project/<?php echo $row['image_3']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
                 </div>
                 <!-- Item 5 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <img src="<?php echo $website; ?>/images/project/<?php echo $row['image_4']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
+                  <img src="<?php echo weburl;?>/images/project/<?php echo $row['image_4']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
                 </div>
               </div>
               <!-- Slider indicators -->
@@ -302,7 +309,7 @@ $user = mysqli_fetch_assoc($queryauthor);
 
               <div class="grid grid-cols-2 gap-2.5">
 
-                <a href="<?php echo $website; ?>/checkout?pid=<?php echo $row['pid']; ?>" class="block relative rounded overflow-hidden">
+                <a href="<?php echo weburl;?>/checkout?pid=<?php echo $row['pid']; ?>" class="block relative rounded overflow-hidden">
                   <button type="submit" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                     <span class="block">Download</span>
                   </button>
@@ -479,7 +486,7 @@ $user = mysqli_fetch_assoc($queryauthor);
                           </div>
                         </td>
                         <td class="whitespace-nowrap px-12 py-4">
-                          <a href="<?php echo $website; ?>/checkout?pid=<?php echo $row['pid']; ?>" class="block relative rounded overflow-hidden">
+                          <a href="<?php echo weburl;?>/checkout?pid=<?php echo $row['pid']; ?>" class="block relative rounded overflow-hidden">
                             <div class="text-sm text-gray-700"><button type="submit" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                                 <span class="block">Download</span>
                               </button></div>
@@ -507,10 +514,10 @@ $user = mysqli_fetch_assoc($queryauthor);
             <img class="shadow-lg border-4 border-white" style="
             /* border-radius: 50%; */
             box-shadow:  11px 11px 21px #cccccc,
-             -11px -11px 21px #ffffff;" src="<?php echo $website; ?>/images/user/<?php echo $user['uimg'] ?>" alt="<?php echo $user['uname'] ?>" width="130" height="130" itemprop="image" decoding="async" loading="lazy">
+             -11px -11px 21px #ffffff;" src="<?php echo weburl;?>/images/user/<?php echo $user['uimg'] ?>" alt="<?php echo $user['uname'] ?>" width="130" height="130" itemprop="image" decoding="async" loading="lazy">
             <div class="ml-10">
 
-              <a href="<?php echo $website; ?>" rel="author"><span class="text-xl font-semibold"><?php echo $user['uname']; ?></span></a>
+              <a href="<?php echo weburl;?>" rel="author"><span class="text-xl font-semibold"><?php echo $user['uname']; ?></span></a>
               <div class=" mt-2 ">
 
                 <?php echo $user['udescription'] ?>
@@ -537,24 +544,87 @@ $user = mysqli_fetch_assoc($queryauthor);
   </div>
   </div>
 
-  <!--	Footer   start-->
-  <?php include("include/footer.php"); ?>
-  <!--	Footer   start-->
   <?php
-  $viewsplus = $row["views"];
-  ++$viewsplus;
-  mysqli_query($con, "UPDATE project SET views=$viewsplus WHERE pid=$pid");
+      $viewsplus = $row["views"];
+      ++$viewsplus;
+      mysqli_query($con, "UPDATE project SET views=$viewsplus WHERE pid=$pid");
+  ?>
+  <!-- code here  -->
+<?php
+    } else {
+?>
+  <!-- code here  -->
+  <!-- code here  -->
+  <title>Page not Fount</title>
+  <meta name="title" content="Page not Fount" />
+  <!-- Open Graph / Facebook -->
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- slick slider CSS library files -->
+  <script type="text/javascript" src="js/cdntailwindcss.js"></script>
+  </head>
+
+  <body>
+    <?php include("include/header.php"); ?>
+    <!--	Header end  -->
+
+    <!-- search start  -->
+    <?php include("include/search.php"); ?>
+    <!-- search end -->
+
+    <?php include("include/404.php"); ?>
+
+    <!-- code here  -->
+  <?php
+    }
+
+    $uid = $row['author'];
+    $queryauthor = mysqli_query($con, "SELECT project.author,user.* FROM project RIGHT JOIN user ON project.author = user.uid WHERE project.author = $uid;");
+    $user = mysqli_fetch_assoc($queryauthor);
   ?>
 
 
-</body>
-<script type="text/javascript" src="js/custom.js"></script>
-<!-- slick slider JS library file -->
-<script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-<!-- <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <!-- code here  -->
+
+<?php
+  } else {
+?>
+  <!-- code here  -->
+  <title>Page not Fount</title>
+  <meta name="title" content="Page not Fount" />
+  <!-- Open Graph / Facebook -->
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- slick slider CSS library files -->
+  <script type="text/javascript" src="js/cdntailwindcss.js"></script>
+  </head>
+
+  <body>
+    <?php include("include/header.php"); ?>
+    <!--	Header end  -->
+
+    <!-- search start  -->
+    <?php include("include/search.php"); ?>
+    <!-- search end -->
+
+    <?php include("include/404.php"); ?>
+
+
+  <?php
+  }
+  ?>
+
+  <?php include("include/footer.php"); ?>
+
+  </body>
+  <script type="text/javascript" src="js/custom.js"></script>
+  <!-- slick slider JS library file -->
+  <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+  <!-- <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
   google.load('visualization', '1', {
     packages: ['annotatedtimeline']
   });
 </script> -->
+
 </html>

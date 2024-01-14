@@ -99,7 +99,7 @@ $pid = $_REQUEST['pid'];
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php echo $websitename;?></title>
+  <title><?php echo webname;?></title>
   <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="js/cdntailwindcss.js"></script>
 </head>
@@ -207,7 +207,7 @@ $pid = $_REQUEST['pid'];
 
 
       <div class="flex flex-row mt-10 justify-center ">
-        <a href="<?php echo $website;?>" class="block relative rounded overflow-hidden">
+        <a href="<?php echo weburl;?>" class="block relative rounded overflow-hidden">
           <button type="button" class="inline-flex items-center justify-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
 
             <span class="block text-xs">Go Back</span> <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

@@ -16,11 +16,11 @@ include("config.php");
 
   <!-- Meta Tags -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="shortcut icon" href="<?php echo $website; ?>/images/favicon.ico">
+  <link rel="shortcut icon" href="<?php echo weburl;?>/images/favicon.ico">
 
   <!-- Primary Meta Tags -->
-  <title><?php echo $websitename; ?></title>
-  <meta name="title" content="<?php echo $websitename; ?>" />
+  <title><?php echo webname;?></title>
+  <meta name="title" content="<?php echo webname;?>" />
   <meta name="description" content="digital project hub is online digital project selling website for learning and study purpose" />
   <meta http-equiv="content-language" content="en-us">
   <meta name="author" content="Rohit Bhure">
@@ -28,8 +28,8 @@ include("config.php");
   <meta name='reply-to' content='rohitbhure.cse@gmail.com'>
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="<?php echo $website; ?>" />
-  <meta property="og:title" content="<?php echo $websitename; ?>" />
+  <meta property="og:url" content="<?php echo weburl;?>" />
+  <meta property="og:title" content="<?php echo webname;?>" />
   <meta property="og:description" content="digital project hub is online digital project selling website for learning and study purpose" />
   <!-- <meta property="og:image" content="https://metatags.io/images/meta-tags.png" /> -->
   <meta name='og:email' content='rohitbhure.cse@gmail.com'>
@@ -37,8 +37,8 @@ include("config.php");
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="<?php echo $website; ?>" />
-  <meta property="twitter:title" content="<?php echo $websitename; ?>" />
+  <meta property="twitter:url" content="<?php echo weburl;?>" />
+  <meta property="twitter:title" content="<?php echo webname;?>" />
   <meta property="twitter:description" content="digital project hub is online digital project selling website for learning and study purpose" />
   <!-- <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" /> -->
 
