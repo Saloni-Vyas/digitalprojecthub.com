@@ -1,5 +1,8 @@
 <?php
 
+define("weburl","http://localhost:80");
+define("webname","DigitalProjectHub");
+
 $website = 'http://localhost:80';
 $websitename = 'DigitalProjectHub';
 

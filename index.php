@@ -16,11 +16,11 @@ include("config.php");
 
   <!-- Meta Tags -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="shortcut icon" href="<?php echo $website;?>/images/favicon.ico">
+  <link rel="shortcut icon" href="<?php echo $website; ?>/images/favicon.ico">
 
   <!-- Primary Meta Tags -->
-  <title><?php echo $websitename;?></title>
-  <meta name="title" content="<?php echo $websitename;?>" />
+  <title><?php echo $websitename; ?></title>
+  <meta name="title" content="<?php echo $websitename; ?>" />
   <meta name="description" content="digital project hub is online digital project selling website for learning and study purpose" />
   <meta http-equiv="content-language" content="en-us">
   <meta name="author" content="Rohit Bhure">
@@ -28,8 +28,8 @@ include("config.php");
   <meta name='reply-to' content='rohitbhure.cse@gmail.com'>
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="<?php echo $website;?>" />
-  <meta property="og:title" content="<?php echo $websitename;?>" />
+  <meta property="og:url" content="<?php echo $website; ?>" />
+  <meta property="og:title" content="<?php echo $websitename; ?>" />
   <meta property="og:description" content="digital project hub is online digital project selling website for learning and study purpose" />
   <!-- <meta property="og:image" content="https://metatags.io/images/meta-tags.png" /> -->
   <meta name='og:email' content='rohitbhure.cse@gmail.com'>
@@ -37,8 +37,8 @@ include("config.php");
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="<?php echo $website;?>" />
-  <meta property="twitter:title" content="<?php echo $websitename;?>"/>
+  <meta property="twitter:url" content="<?php echo $website; ?>" />
+  <meta property="twitter:title" content="<?php echo $websitename; ?>" />
   <meta property="twitter:description" content="digital project hub is online digital project selling website for learning and study purpose" />
   <!-- <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" /> -->
 
@@ -55,64 +55,43 @@ include("config.php");
       <!--	Header start  -->
       <?php include("include/header.php"); ?>
       <!--	Header end  -->
-
       <!-- search start  -->
       <?php include("include/search.php"); ?>
       <!-- search end -->
 
-      <!-- project catgory start  -->
-      <?php include("include/catagory.php"); ?>
-      <!-- project catgory end -->
+      <?php
+      if (isset($_SERVER['PATH_INFO'])) {   
+        $slugurl = $_SERVER['PATH_INFO'];
+        $query1 = mysqli_query($con, "SELECT * FROM project WHERE slug='$slugurl';");
+        $row1 = mysqli_fetch_assoc($query1);
+      } else {
+      ?>
+        <!-- project catgory start  -->
+        <?php include("include/catagory.php"); ?>
+        <!-- project catgory end -->
 
-      <?php include("include/status.php"); ?>
+        <?php include("include/status.php"); ?>
 
-      <!-- recent project  -->
-      <?php include("include/recentproject.php"); ?>
-      <!-- recent project  -->
+        <!-- recent project  -->
+        <?php include("include/recentproject.php"); ?>
+        <!-- recent project  -->
 
-      <!-- team start -->
-      <?php include("include/team.php"); ?>
-      <!-- team start end -->
+        <!-- team start -->
+        <?php include("include/team.php"); ?>
+        <!-- team start end -->
 
-      <!-- contact start -->
-      <?php include("include/contact.php"); ?>
-      <!-- contact end -->
+        <!-- contact start -->
+        <?php include("include/contact.php"); ?>
+        <!-- contact end -->
 
-      <!-- contact start -->
-      <?php include("include/teami.php"); ?>
-      <!-- contact end -->
+        <!-- contact start -->
+        <?php include("include/teami.php"); ?>
+        <!-- contact end -->
 
-
-      <!-- testinomial start  -->
-      <section class="px-2 md:px-0">
-        <div class="mx-auto text-center">
-          <h2 class="mt-6 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-            Client & Digital<span style="color: rgb(161,54,130);
-color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">ProjectHub</span>
-          </h2>
-          <p class="mt-4 text-base leading-relaxed text-gray-600">
-            Empowering Dreams, Inspiring Success – Hear what our satisfied users have to say about their journey with us.<br> Real stories, real results, real testimonials that speak louder than words.
-          </p>
-        </div>
-        <div class="mx-auto max-w-4xl mt-10">
-          <div class="md:flex md:items-center md:justify-center md:space-x-14">
-            <div class="relative h-48 w-48 flex-shrink-0">
-              <img class="relative h-48 w-48 shadow-2xl rounded-full object-cover" src="<?php echo $website; ?>/images/team/divyansh.jpg" decoding="async" loading="lazy" alt="" />
-            </div>
-            <div class="mt-10 md:mt-0">
-              <blockquote>
-                <p class="text-xl text-black">
-                  “<?php echo $websitename;?> has truly been a game-changer for my academic journey. The variety and quality of projects available on the website surpassed my expectations. The user-friendly interface made it easy for me to find and purchase the perfect project for my computer science course.”
-                </p>
-              </blockquote>
-              <p class="mt-7 text-lg font-semibold text-black">Rahul Verma</p>
-              <p class="mt-1 text-base text-gray-600">Pursuing BTech</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- testinomial end -->
+        <!-- testinomail start -->
+        <?php include("include/testinomial.php"); ?>
+        <!-- testinomail end -->
+      <?php } ?>
 
       <!--	Footer   start-->
       <?php include("include/footer.php"); ?>
