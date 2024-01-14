@@ -222,11 +222,11 @@ $pid = $_REQUEST['pid'];
 
 </body>
 <script type="text/javascript" src="js/custom.js"></script>
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<!-- <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
   google.load('visualization', '1', {
     packages: ['annotatedtimeline']
   });
-</script>
+</script> -->
 
 </html>

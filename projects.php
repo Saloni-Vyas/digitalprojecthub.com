@@ -152,11 +152,11 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
   </div>
 </body>
 <script type="text/javascript" src="js/custom.js"></script>
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<!-- <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
   google.load('visualization', '1', {
     packages: ['annotatedtimeline']
   });
-</script>
+</script> -->
 
 </html>

@@ -3,6 +3,7 @@ ini_set('session.cache_limiter', 'public');
 session_cache_limiter(false);
 session_start();
 include("config.php");
+// TODO all this to index.php
 
 $pid = $_GET['pid'];
 $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND pid=$pid");
@@ -550,11 +551,10 @@ $user = mysqli_fetch_assoc($queryauthor);
 <script type="text/javascript" src="js/custom.js"></script>
 <!-- slick slider JS library file -->
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<!-- <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
   google.load('visualization', '1', {
     packages: ['annotatedtimeline']
   });
-</script>
-
+</script> -->
 </html>
