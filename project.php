@@ -37,7 +37,7 @@ include("config.php");
       <meta name="keyword" content="<?php echo $row['keyword']; ?>">
       <meta property="article:published_time" content="<?php echo $row['date']; ?>">
       <meta property="article:modified_time" content="<?php echo $row['date']; ?>">
-      <meta name='url' content='<?php echo $website ?>/project?pid=<?php echo $row['pid']; ?>'>
+      <meta name='url' content='<?php echo $website ?>/project?p=<?php echo $row['slug']; ?>'>
       <meta http-equiv="content-language" content="en-us">
       <meta name="author" content="<?php echo $user['uname']; ?>">
       <meta name="owner" content="Rohit Bhure">
@@ -47,7 +47,7 @@ include("config.php");
       <meta property="og:locale" content="en_US">
       <meta property="og:site_name" content="<?php echo webname; ?>">
       <meta property="og:type" content="article" />
-      <meta property="og:url" content="<?php echo weburl; ?>/project?pid=<?php echo $row['pid']; ?>" />
+      <meta property="og:url" content="<?php echo weburl; ?>/project?p=<?php echo $row['slug']; ?>" />
       <meta property="og:title" content="<?php echo $row['title']; ?>b" />
       <meta property="og:description" content="<?php echo $row['description']; ?>" />
       <meta property="og:image" content="<?php echo weburl; ?>/images/project/<?php echo $row['image']; ?>" />
@@ -56,7 +56,7 @@ include("config.php");
 
       <!-- Twitter -->
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="<?php echo weburl; ?>/project?pid=<?php echo $row['pid']; ?>" />
+      <meta property="twitter:url" content="<?php echo weburl; ?>/project?p=<?php echo $row['slug']; ?>" />
       <meta property="twitter:title" content="<?php echo $row['title']; ?>" />
       <meta property="twitter:description" content="<?php echo $row['description']; ?>" />
       <meta property="twitter:image" content="<?php echo weburl; ?>/images/project/<?php echo $row['image']; ?>" />
@@ -103,7 +103,7 @@ include("config.php");
             "@type": "ListItem",
             "position": 4,
             "name": "<?php echo $row['title']; ?>",
-            "item": "<?php echo weburl; ?>/project?pid=<?php echo $row['pid']; ?>"
+            "item": "<?php echo weburl; ?>/project?p=<?php echo $row['slug']; ?>"
           }]
         }
       </script>
@@ -120,7 +120,7 @@ include("config.php");
           },
           "offers": {
             "@type": "Offer",
-            "url": "<?php echo weburl; ?>/project?pid=<?php echo $row['pid']; ?>",
+            "url": "<?php echo weburl; ?>/project?p=<?php echo $row['slug']; ?>",
             "priceCurrency": "INR",
             "price": "<?php echo $row['price']; ?>",
             "availability": "https://schema.org/OnlineOnly"
@@ -134,12 +134,73 @@ include("config.php");
       </script>
       <style>
         .project p {
-          padding-bottom: 1.4rem;
+          padding-bottom: 1rem;
+          font-size: 1.125rem;
+          line-height: 1.875rem;
+        }
+
+        .project ol {
+          padding-left: 1.125rem;
+          font-size: 1.125rem;
+          margin-bottom: 1.4rem;
+        }
+
+        .project ul {
+          padding-left: 1.125rem;
+          font-size: 1.125rem;
+          margin-bottom: 1.4rem;
+        }
+
+        .project li {
+          list-style-type: disc;
+          padding-bottom: 0.2rem;
+          display: list-item;
+        }
+
+        .project pre {
+          padding: 10px;
+          margin-bottom: 1rem;
+          background-color: #e6e6e6d4;
         }
 
         .project h1,
-        h2 {
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
           padding-bottom: 1rem;
+          line-height: 2rem;
+        }
+
+        .project h1 {
+          font-weight: 600;
+          font-size: 2.25rem;
+        }
+
+        .project h2 {
+          font-weight: 600;
+          font-size: 1.875rem;
+        }
+
+        .project h3 {
+          font-weight: 600;
+          font-size: 1.5rem;
+        }
+
+        .project h4 {
+          font-weight: 600;
+          font-size: 1.25rem;
+        }
+
+        .project h5 {
+          font-weight: 600;
+          font-size: 1rem;
+        }
+
+        .project h6 {
+          font-weight: 600;
+          font-size: 0.875rem;
         }
 
         @media only screen and (max-width: 600px) {
@@ -323,10 +384,10 @@ include("config.php");
               </div>
             </div>
             <div class="pt-6 xl:pt-8">
-              <h3 class="text-15px mb-3 font-semibold sm:text-base lg:mb-3.5">
+              <h3 class="font-semibold sm:text-base">
                 Product Details:
               </h3>
-              <p class="text-sm">
+              <p class="text-base">
                 <?php echo $row['description']; ?>
               </p>
             </div>
@@ -341,7 +402,14 @@ include("config.php");
           </div>
         </div>
         <hr class="m-10">
+
+        <!-- video embed    -->
+
         <div class="project">
+          <iframe class="mx-auto w-full mb-10" src="http://www.youtube.com/embed/<?php echo $row['video']; ?>?yt:stretch=16:9&vq=hd1080p&loop=0&color=red&iv_load_policy=3&rel=0&showinfo=0&autohide=0&controls=1" decoding="async" loading="lazy" height="600" allowtransparency="true" frameborder="0"></iframe>
+          <!-- video embed    -->
+          <h1 class="text-4xl font-semibold"><?php echo $row['title']; ?></h1>
+
           <?php echo $row['content']; ?>
         </div>
         <!-- project table start  -->
