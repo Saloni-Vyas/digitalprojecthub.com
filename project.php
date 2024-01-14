@@ -19,11 +19,11 @@ include("config.php");
     $pid = $_REQUEST['pid'];
     $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND pid=$pid");
     $row = mysqli_fetch_assoc($query);
-    
-    if ($pid == $row['pid']) {
-    $uid = $row['author'];
-$queryauthor = mysqli_query($con, "SELECT project.author,user.* FROM project RIGHT JOIN user ON project.author = user.uid WHERE project.author = $uid;");
-$user = mysqli_fetch_assoc($queryauthor);
+
+    if ($pid == (isset($row['pid']))) {
+      $uid = $row['author'];
+      $queryauthor = mysqli_query($con, "SELECT project.author,user.* FROM project RIGHT JOIN user ON project.author = user.uid WHERE project.author = $uid;");
+      $user = mysqli_fetch_assoc($queryauthor);
   ?>
       <!-- code here  -->
       <!-- code here  -->
@@ -41,21 +41,21 @@ $user = mysqli_fetch_assoc($queryauthor);
       <meta name='reply-to' content='<?php echo $user['email']; ?>'>
       <!-- Open Graph / Facebook -->
       <meta property="og:locale" content="en_US">
-      <meta property="og:site_name" content="<?php echo webname;?>">
+      <meta property="og:site_name" content="<?php echo webname; ?>">
       <meta property="og:type" content="article" />
-      <meta property="og:url" content="<?php echo weburl;?>/project?pid=<?php echo $row['pid']; ?>" />
+      <meta property="og:url" content="<?php echo weburl; ?>/project?pid=<?php echo $row['pid']; ?>" />
       <meta property="og:title" content="<?php echo $row['title']; ?>b" />
       <meta property="og:description" content="<?php echo $row['description']; ?>" />
-      <meta property="og:image" content="<?php echo weburl;?>/images/project/<?php echo $row['image']; ?>" />
+      <meta property="og:image" content="<?php echo weburl; ?>/images/project/<?php echo $row['image']; ?>" />
       <meta name='og:email' content='<?php echo $user['email']; ?>'>
       <meta name='og:phone_number' content='<?php echo $user['phone']; ?>'>
 
       <!-- Twitter -->
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="<?php echo weburl;?>/project?pid=<?php echo $row['pid']; ?>" />
+      <meta property="twitter:url" content="<?php echo weburl; ?>/project?pid=<?php echo $row['pid']; ?>" />
       <meta property="twitter:title" content="<?php echo $row['title']; ?>" />
       <meta property="twitter:description" content="<?php echo $row['description']; ?>" />
-      <meta property="twitter:image" content="<?php echo weburl;?>/images/project/<?php echo $row['image']; ?>" />
+      <meta property="twitter:image" content="<?php echo weburl; ?>/images/project/<?php echo $row['image']; ?>" />
 
 
       <link rel="stylesheet" href="css/style.css">
@@ -65,13 +65,13 @@ $user = mysqli_fetch_assoc($queryauthor);
         {
           "@context": "https://schema.org/",
           "@type": "Person",
-          "name": "<?php echo $user['phone']; ?>",
+          "name": "<?php echo $user['uname']; ?>",
           "url": "<?php echo $user['url']; ?>",
-          "image": "<?php echo weburl;?>/images/user/<?php echo $user['uimg']; ?>",
+          "image": "<?php echo weburl; ?>/images/user/<?php echo $user['uimg']; ?>",
           "jobTitle": "<?php echo $user['type']; ?>",
           "worksFor": {
             "@type": "Organization",
-            "name": "<?php echo webname;?>"
+            "name": "<?php echo webname; ?>"
           }
         }
       </script>
@@ -88,17 +88,17 @@ $user = mysqli_fetch_assoc($queryauthor);
             "@type": "ListItem",
             "position": 2,
             "name": "projects",
-            "item": "<?php echo weburl;?>/projects?technology=&search="
+            "item": "<?php echo weburl; ?>/projects?technology=&search="
           }, {
             "@type": "ListItem",
             "position": 3,
             "name": "<?php echo $row['cname']; ?>",
-            "item": "<?php echo weburl;?>/projects?technology=<?php echo $row['cname']; ?>"
+            "item": "<?php echo weburl; ?>/projects?technology=<?php echo $row['cname']; ?>"
           }, {
             "@type": "ListItem",
             "position": 4,
             "name": "<?php echo $row['title']; ?>",
-            "item": "<?php echo weburl;?>/project?pid=<?php echo $row['pid']; ?>"
+            "item": "<?php echo weburl; ?>/project?pid=<?php echo $row['pid']; ?>"
           }]
         }
       </script>
@@ -111,11 +111,11 @@ $user = mysqli_fetch_assoc($queryauthor);
           "description": "<?php echo $row['description']; ?>",
           "brand": {
             "@type": "Brand",
-            "name": "<?php echo webname;?>"
+            "name": "<?php echo webname; ?>"
           },
           "offers": {
             "@type": "Offer",
-            "url": "<?php echo weburl;?>/project?pid=<?php echo $row['pid']; ?>",
+            "url": "<?php echo weburl; ?>/project?pid=<?php echo $row['pid']; ?>",
             "priceCurrency": "INR",
             "price": "<?php echo $row['price']; ?>",
             "availability": "https://schema.org/OnlineOnly"
@@ -163,7 +163,7 @@ $user = mysqli_fetch_assoc($queryauthor);
         <nav class="flex mb-5" aria-label="Breadcrumb">
           <ol class="inline-flex items-center space-x-1 md:space-x-3">
             <li class="inline-flex items-center">
-              <a href="<?php echo weburl;?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
+              <a href="<?php echo weburl; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 h-4 w-4">
                   <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -176,7 +176,7 @@ $user = mysqli_fetch_assoc($queryauthor);
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="<?php echo weburl;?>/projects?technology=&search=" class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="<?php echo weburl; ?>/projects?technology=&search=" class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   projects
                 </a>
               </div>
@@ -186,7 +186,7 @@ $user = mysqli_fetch_assoc($queryauthor);
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="<?php echo weburl;?>/projects?technology=<?php echo $row['cname']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="<?php echo weburl; ?>/projects?technology=<?php echo $row['cname']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   <span class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                     <?php echo $row['cname']; ?>
                   </span>
@@ -198,7 +198,7 @@ $user = mysqli_fetch_assoc($queryauthor);
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="<?php echo weburl;?>/project?pid=<?php echo $row['pid']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="<?php echo weburl; ?>/project?pid=<?php echo $row['pid']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   <span class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                     <?php echo $row['title']; ?>
                   </span>
@@ -217,23 +217,23 @@ $user = mysqli_fetch_assoc($queryauthor);
                 <!-- Item 1 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                   <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-                  <img src="<?php echo weburl;?>/images/project/<?php echo $row['image']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
+                  <img src="<?php echo weburl; ?>/images/project/<?php echo $row['image']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
                 </div>
                 <!-- Item 2 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <img src="<?php echo weburl;?>/images/project/<?php echo $row['image_1']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
+                  <img src="<?php echo weburl; ?>/images/project/<?php echo $row['image_1']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
                 </div>
                 <!-- Item 3 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <img src="<?php echo weburl;?>/images/project/<?php echo $row['image_2']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
+                  <img src="<?php echo weburl; ?>/images/project/<?php echo $row['image_2']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
                 </div>
                 <!-- Item 4 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <img src="<?php echo weburl;?>/images/project/<?php echo $row['image_3']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
+                  <img src="<?php echo weburl; ?>/images/project/<?php echo $row['image_3']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
                 </div>
                 <!-- Item 5 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <img src="<?php echo weburl;?>/images/project/<?php echo $row['image_4']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
+                  <img src="<?php echo weburl; ?>/images/project/<?php echo $row['image_4']; ?>" decoding="async" loading="lazy" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="<?php echo $row['title']; ?>">
                 </div>
               </div>
               <!-- Slider indicators -->
@@ -309,7 +309,7 @@ $user = mysqli_fetch_assoc($queryauthor);
 
               <div class="grid grid-cols-2 gap-2.5">
 
-                <a href="<?php echo weburl;?>/checkout?pid=<?php echo $row['pid']; ?>" class="block relative rounded overflow-hidden">
+                <a href="<?php echo weburl; ?>/checkout?pid=<?php echo $row['pid']; ?>" class="block relative rounded overflow-hidden">
                   <button type="submit" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                     <span class="block">Download</span>
                   </button>
@@ -486,7 +486,7 @@ $user = mysqli_fetch_assoc($queryauthor);
                           </div>
                         </td>
                         <td class="whitespace-nowrap px-12 py-4">
-                          <a href="<?php echo weburl;?>/checkout?pid=<?php echo $row['pid']; ?>" class="block relative rounded overflow-hidden">
+                          <a href="<?php echo weburl; ?>/checkout?pid=<?php echo $row['pid']; ?>" class="block relative rounded overflow-hidden">
                             <div class="text-sm text-gray-700"><button type="submit" class="inline-flex items-center justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                                 <span class="block">Download</span>
                               </button></div>
@@ -503,21 +503,21 @@ $user = mysqli_fetch_assoc($queryauthor);
 
         <div class="mt-4">
           <b>Tags: </b>
-          <button type="button" class="ml-2 rounded-md bg-black align-left px-3 py-2 mb-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
-            <strong><?php echo $row['keyword']; ?></strong>
-          </button>
+          <strong class="rounded-md align-left px-3 py-2 mb-2 text-sm">
+            <?php echo $row['keyword']; ?>
+          </strong>
         </div>
         <!-- team -->
         <h5 class="mt-10 mb-10 font-semibold text-2xl">About Author:</h5>
         <div class="p-2 rounded-2xl shadow-lg mx-auto">
-          <div class="flex flex-row m-6 items-center">
-            <img class="shadow-lg border-4 border-white" style="
+          <div class="flex flex-row p-2 items-center mx-auto">
+            <img class="border-4 border-white" style="
             /* border-radius: 50%; */
             box-shadow:  11px 11px 21px #cccccc,
-             -11px -11px 21px #ffffff;" src="<?php echo weburl;?>/images/user/<?php echo $user['uimg'] ?>" alt="<?php echo $user['uname'] ?>" width="130" height="130" itemprop="image" decoding="async" loading="lazy">
-            <div class="ml-10">
+             -11px -11px 21px #ffffff;" src="<?php echo weburl; ?>/images/user/<?php echo $user['uimg'] ?>" alt="<?php echo $user['uname'] ?>" width="130" height="130" itemprop="image" decoding="async" loading="lazy">
+            <div class="ml-6">
 
-              <a href="<?php echo weburl;?>" rel="author"><span class="text-xl font-semibold"><?php echo $user['uname']; ?></span></a>
+              <a href="<?php echo weburl; ?>" rel="author"><span class="text-xl font-semibold"><?php echo $user['uname']; ?></span></a>
               <div class=" mt-2 ">
 
                 <?php echo $user['udescription'] ?>
