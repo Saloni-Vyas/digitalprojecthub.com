@@ -15,12 +15,16 @@ include("config.php");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php
 
-  if (isset($_REQUEST['pid'])) {
-    $pid = $_REQUEST['pid'];
-    $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND pid=$pid");
+  // echo "<pre>";
+  // print_r(array($_REQUEST));
+  // echo "</pre>";
+
+  if (isset($_REQUEST['p'])) {
+    $slug = $_REQUEST['p'];
+    $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND slug='$slug';");
     $row = mysqli_fetch_assoc($query);
 
-    if ($pid == (isset($row['pid']))) {
+    if ($slug == (isset($row['slug']))) {
       $uid = $row['author'];
       $queryauthor = mysqli_query($con, "SELECT project.author,user.* FROM project RIGHT JOIN user ON project.author = user.uid WHERE project.author = $uid;");
       $user = mysqli_fetch_assoc($queryauthor);
@@ -61,6 +65,7 @@ include("config.php");
       <link rel="stylesheet" href="css/style.css">
       <!-- slick slider CSS library files -->
       <script type="text/javascript" src="js/cdntailwindcss.js"></script>
+      <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
       <script type="application/ld+json">
         {
           "@context": "https://schema.org/",
@@ -547,7 +552,7 @@ include("config.php");
   <?php
       $viewsplus = $row["views"];
       ++$viewsplus;
-      mysqli_query($con, "UPDATE project SET views=$viewsplus WHERE pid=$pid");
+      mysqli_query($con, "UPDATE project SET views=$viewsplus WHERE slug='$slug';");
   ?>
   <!-- code here  -->
 <?php
@@ -573,14 +578,11 @@ include("config.php");
     <!-- search end -->
 
     <?php include("include/404.php"); ?>
-
     <!-- code here  -->
   <?php
     }
 
-    $uid = $row['author'];
-    $queryauthor = mysqli_query($con, "SELECT project.author,user.* FROM project RIGHT JOIN user ON project.author = user.uid WHERE project.author = $uid;");
-    $user = mysqli_fetch_assoc($queryauthor);
+
   ?>
 
 
@@ -619,7 +621,7 @@ include("config.php");
   </body>
   <script type="text/javascript" src="js/custom.js"></script>
   <!-- slick slider JS library file -->
-  <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+
   <!-- <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
   google.load('visualization', '1', {
