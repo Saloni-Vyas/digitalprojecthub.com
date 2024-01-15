@@ -11,7 +11,7 @@ include("config.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D<?php echo webname;?></title>
+    <title><?php echo webname;?></title>
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/cdntailwindcss.js"></script>
 </head>
@@ -63,7 +63,7 @@ include("config.php");
                 </ol>
             </nav>
 
-            <form name="checkout" method="post" action="<?php echo weburl;?>/phonepe?pid=<?php echo $pid; ?>">
+            <form name="checkout" method="post" action="<?php echo weburl;?>/phonepe.php?pid=<?php echo $pid; ?>">
                 <div class="overflow-hidden rounded-xl bg-white p-4 shadow">
                     <div class="mb-4 flex items-center rounded-lg py-2">
                         <div class="mr-2 rounded-full bg-gray-100  p-2 text-black">

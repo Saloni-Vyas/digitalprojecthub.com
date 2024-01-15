@@ -8,15 +8,18 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
     <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
         <dl class="grid max-w-screen-md gap-8 mx-auto text-gray-900 sm:grid-cols-3 dark:text-white">
             <div class="flex flex-col items-center justify-center">
-                <dt class="mb-2 text-3xl md:text-4xl font-extrabold"><?php echo $projectcount[0]; ?>+</dt>
+                <!-- <dt class="mb-2 text-3xl md:text-4xl font-extrabold"><?php echo $projectcount[0]; ?>+</dt> -->
+                <dt class="mb-2 text-3xl md:text-4xl text-white font-extrabold">93+</dt>
                 <dd class="font-light text-white">Projects</dd>
             </div>
             <div class="flex flex-col items-center justify-center">
-                <dt class="mb-2 text-3xl md:text-4xl font-extrabold"><?php echo $categorycount[0];?>+</dt>
+                <!-- <dt class="mb-2 text-3xl md:text-4xl font-extrabold"><?php echo $categorycount[0];?>+</dt> -->
+                <dt class="mb-2 text-3xl md:text-4xl text-white font-extrabold">7+</dt>
                 <dd class="font-light text-white">Categorys</dd>
             </div>
             <div class="flex flex-col items-center justify-center">
-                <dt class="mb-2 text-3xl md:text-4xl font-extrabold"><?php echo $transactioncount[0];?>+</dt>
+                <!-- <dt class="mb-2 text-3xl md:text-4xl font-extrabold"><?php echo $transactioncount[0];?>+</dt> -->
+                <dt class="mb-2 text-3xl md:text-4xl text-white font-extrabold">842+</dt>
                 <dd class="font-light text-white">Downloads</dd>
             </div>
         </dl>

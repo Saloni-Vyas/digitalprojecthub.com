@@ -30,7 +30,7 @@ $search = $_REQUEST['search'];
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="shortcut icon" href="images/favicon.ico">
 
-  <title><?php echo $_REQUEST['technology'] . ' | '; ?>Projects</title>
+  <title><?php echo $_REQUEST['technology'] .' ' .$_REQUEST['search']. ' | '; ?>Projects</title>
   <meta name="title" content="<?php echo $_REQUEST['technology'] . ' | '; ?>Projects" />
   <meta name="description" content="<?php echo $_REQUEST['technology']; ?>" />
   <meta name='url' content='http://localhost:80/project?technology=<?php echo $techology; ?>&search=<?php echo $search; ?>&page=<?php echo $page; ?>'>
@@ -42,7 +42,7 @@ $search = $_REQUEST['search'];
 
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="<?php echo webname;?>">
+  <meta property="og:site_name" content="<?php echo webname; ?>">
   <meta property="og:type" content="article" />
   <meta property="og:url" content="http://localhost:80/project?technology=<?php echo $techology; ?>&search=<?php echo $search; ?>&page=<?php echo $page; ?>" />
   <meta property="og:title" content="<?php echo $_REQUEST['technology'] . ' | '; ?>Projects" />
@@ -79,17 +79,19 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
           <div class="flex flex-wrap -m-4 justify-center">
             <?php
             if (isset($_REQUEST['search'])) {
-              $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND title LIKE '%$search%' LIMIT $result,$post_per_page;");
+              // $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND title LIKE '%$search%' LIMIT $result,$post_per_page;");         
+              $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid AND title LIKE '%$search%'");
             } else {
-              $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid LIMIT $result,$post_per_page;");
+              // $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid LIMIT $result,$post_per_page;");     
+              $query = mysqli_query($con, "SELECT project.*, category.cname FROM project,category WHERE project.category_id = category.cid");
             }
             $total_posts = mysqli_num_rows($query);
             $total_pages = ceil($post_per_page / $total_posts);
             while ($row = mysqli_fetch_assoc($query)) {
             ?>
               <div class="lg:w-1/5 md:w-1/2 p-0 w-full shadow-lg m-2 mt-4 rounded-lg">
-                <a href="<?php echo weburl;?>/project?pid=<?php echo $row['pid']; ?>" class="block relative rounded overflow-hidden">
-                  <img alt="ecommerce" class="object-cover object-center w-full h-full block" decoding="async" loading="lazy" src="<?php echo weburl;?>/images/project/<?php echo $row['image']; ?>">
+                <a href="<?php echo weburl; ?><?php echo $row['slug']; ?>" class="block relative rounded overflow-hidden">
+                  <img alt="ecommerce" class="object-cover object-center w-full h-full block" decoding="async" loading="lazy" src="<?php echo weburl; ?>/images/upload/<?php echo $row['image']; ?>">
                   <div class="mt-4 p-3">
                     <div class="flex flex-row justify-between">
                       <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1"><?php echo $row['cname']; ?></h3>
@@ -112,37 +114,9 @@ color: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%);">P
         </div>
       </section>
       <!-- pagination -->
+      <!-- note include from include pagination.php  -->
 
-      <?php
-      if ($page > 1) {
-        $switch = "";
-      } else {
-        $switch = "display:none;";
-      }
-      if ($page < $total_posts) {
-        $nswitch = "";
-      } else {
-        $nswitch = "display:none;";
-      }
-      ?>
-      <div class="flex justify-center mt-10 items-center">
-        <a href="<?php echo weburl;?>/projects?technology=<?php echo $techology; ?>&search=<?php echo $search; ?>&page=<?php echo $page - 1 ?>" style="<?php echo $switch; ?>" class="mx-1 text-sm font-semibold text-gray-900">
-          ← Previous
-        </a>
-
-        <?php
-        for ($opage = 1; $opage <= $total_posts; $opage++) {
-        ?>
-          <a href="<?php echo weburl;?>/projects?technology=<?php echo $techology; ?>&search=<?php echo $search; ?>&page=<?php echo $opage; ?>" class="mx-1 flex items-center rounded-md border border-gray-400 px-3 py-1 text-gray-900 hover:scale-105">
-            <?php echo $opage; ?>
-          </a>
-        <?php }; ?>
-        <!-- pagination -->
-
-        <a href="<?php echo weburl;?>/projects?technology=<?php echo $techology; ?>&search=<?php echo $search; ?>&page=<?php echo $page + 1 ?>" style="<?php echo $nswitch; ?>" class="mx-2 text-sm font-semibold text-gray-900">
-          Next →
-        </a>
-      </div>
+      <!-- pagination -->
       <!--	Footer   start-->
       <?php include("include/footer.php"); ?>
       <!--	Footer   start-->

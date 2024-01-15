@@ -10,7 +10,7 @@ $websitephone = 'http://localhost:80';
 // TODO MERCHANT ID FOR PHONE PE
 $merchantId = 'PGTESTPAYUAT'; // sandbox or test merchantId
 $apiKey = '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399'; // sandbox or test APIKEY
-$redirectUrl = $websitephone . '/payment-success?pid=' . $pid . '&name=' . $fname . '&email=' . $femail . '&phone=' . $fphone . '&title=' . $ftitle;
+$redirectUrl = $websitephone . '/payment-success.php?pid=' . $pid . '&name=' . $fname . '&email=' . $femail . '&phone=' . $fphone . '&title=' . $ftitle;
 $callbackUrl = $websitephone . '/';
 // Set transaction details
 $name = $fname;

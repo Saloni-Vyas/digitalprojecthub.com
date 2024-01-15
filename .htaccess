@@ -9,7 +9,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 #Rewrite Condition for File
 RewriteCond %{REQUEST_FILENAME} !-f
 
-#Rewrite Rule
-RewriteRule ^([^\.]+)$ $1.php [NC,L] 
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.*)$ index.php/$1 [QSA,L]
 
 </IfModule>
