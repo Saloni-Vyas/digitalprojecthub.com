@@ -7,7 +7,7 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
        <p style="color: #fff" class="lg:w-2/3 mx-auto leading-relaxed text-base">where innovation meets execution, and bugs are just unexpected features waiting to be discovered!</p>
      </div>
 
-     <form name="search" method="post" action="<?php echo weburl;?>/projects" class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+     <form name="search" method="post" action="<?php echo weburl;?>/projects.php" class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
        <div class="relative flex-grow w-full">
          <select style="height:42px" id="technology" name="technology" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
            <option style="color: #000" value="">Select Technology</option>

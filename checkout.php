@@ -63,7 +63,7 @@ include("config.php");
                 </ol>
             </nav>
 
-            <form name="checkout" method="post" action="<?php echo weburl;?>/phonepe?pid=<?php echo $pid; ?>">
+            <form name="checkout" method="post" action="<?php echo weburl;?>/phonepe.php?pid=<?php echo $pid; ?>">
                 <div class="overflow-hidden rounded-xl bg-white p-4 shadow">
                     <div class="mb-4 flex items-center rounded-lg py-2">
                         <div class="mr-2 rounded-full bg-gray-100  p-2 text-black">
