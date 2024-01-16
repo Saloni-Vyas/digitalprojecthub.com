@@ -94,12 +94,12 @@ include("config.php");
             "@type": "ListItem",
             "position": 2,
             "name": "projects",
-            "item": "<?php echo weburl; ?>/projects?technology=&search="
+            "item": "<?php echo weburl; ?>/projects.php?technology=&search="
           }, {
             "@type": "ListItem",
             "position": 3,
             "name": "<?php echo $row['cname']; ?>",
-            "item": "<?php echo weburl; ?>/projects?technology=<?php echo $row['cname']; ?>"
+            "item": "<?php echo weburl; ?>/projects.php?technology=<?php echo $row['cname']; ?>"
           }, {
             "@type": "ListItem",
             "position": 4,
@@ -251,7 +251,7 @@ include("config.php");
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="<?php echo weburl; ?>/projects?technology=&search=" class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="<?php echo weburl; ?>/projects.php?technology=&search=" class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   projects
                 </a>
               </div>
@@ -261,7 +261,7 @@ include("config.php");
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="<?php echo weburl; ?>/projects?technology=<?php echo $row['cname']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="<?php echo weburl; ?>/projects.php?technology=<?php echo $row['cname']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   <span class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                     <?php echo $row['cname']; ?>
                   </span>
