@@ -15,7 +15,7 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
             <img alt="<?php echo $row['uname']; ?>" class="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="<?php echo weburl; ?>/images/team/<?php echo $row['uimg']; ?>" decoding="async" loading="lazy">
             <div class="flex-grow">
               <h2 class="text-gray-900 title-font font-medium mb-1"><?php echo $row['uname']; ?></h2>
-              <p class="text-gray-500"><?php echo $row['udescription']; ?></p>
+              <p class="font-light"><?php echo $row['udescription']; ?></p>
             </div>
           </div>
         </div>

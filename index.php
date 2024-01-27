@@ -94,12 +94,12 @@ include("config.php");
             "@type": "ListItem",
             "position": 2,
             "name": "projects",
-            "item": "<?php echo weburl; ?>/projects?technology=&search="
+            "item": "<?php echo weburl; ?>/projects.php?technology=&search="
           }, {
             "@type": "ListItem",
             "position": 3,
             "name": "<?php echo $row['cname']; ?>",
-            "item": "<?php echo weburl; ?>/projects?technology=<?php echo $row['cname']; ?>"
+            "item": "<?php echo weburl; ?>/projects.php?technology=<?php echo $row['cname']; ?>"
           }, {
             "@type": "ListItem",
             "position": 4,
@@ -220,6 +220,13 @@ include("config.php");
           .prw {
             width: 90vw;
           }
+          .authors{
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          .ad {
+            margin-top: 1.5rem
+          }
         }
       </style>
 </head>
@@ -251,7 +258,7 @@ include("config.php");
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="<?php echo weburl; ?>/projects?technology=&search=" class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="<?php echo weburl; ?>/projects.php?technology=&search=" class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   projects
                 </a>
               </div>
@@ -261,7 +268,7 @@ include("config.php");
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-                <a href="<?php echo weburl; ?>/projects?technology=<?php echo $row['cname']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
+                <a href="<?php echo weburl; ?>/projects.php?technology=<?php echo $row['cname']; ?>" class="ml-1 inline-flex text-sm font-medium text-gray-800 hover:underline md:ml-2">
                   <span class="ml-1 text-sm font-medium text-gray-800 hover:underline md:ml-2">
                     <?php echo $row['cname']; ?>
                   </span>
@@ -588,21 +595,21 @@ include("config.php");
         </div>
         <!-- team -->
         <h5 class="mt-10 mb-10 font-semibold text-2xl">About Author:</h5>
-        <div class="p-2 rounded-2xl shadow-lg mx-auto">
-          <div class="flex flex-row p-2 items-center mx-auto">
-            <img class="border-4 border-white" style="
-                /* border-radius: 50%; */
-                box-shadow:  11px 11px 21px #cccccc,
-                 -11px -11px 21px #ffffff;" src="<?php echo weburl; ?>/images/user/<?php echo $user['uimg'] ?>" alt="<?php echo $user['uname'] ?>" width="130" height="130" itemprop="image" decoding="async" loading="lazy">
-            <div class="ml-6">
+        <div class="p-2 mx-auto" style="border: 1px solid rgb(109 109 109 / 0.20);
+    border-radius: 4px;">
+          <div class="flex flex-row p-2 items-center mx-auto authors">
+            <img class="p-2" style="border-radius: 50%; height: 50%" src="<?php echo weburl; ?>/images/user/<?php echo $user['uimg'] ?>" alt="<?php echo $user['uname'] ?>" width="130" height="130" itemprop="image" decoding="async" loading="lazy">
+            <div class="ml-6 ad">
 
-              <a href="<?php echo weburl; ?>" rel="author"><span class="text-xl font-semibold"><?php echo $user['uname']; ?></span></a>
-              <div class=" mt-2 ">
+              <a href="<?php echo weburl; ?>" rel="author"><span class="text-xl font-medium flex items-center"><?php echo $user['uname'].' ('.$user['type'].') '; ?><svg class="ml-1" fill="#228BE6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="17px" height="17px">
+                    <path d="M32,6C17.641,6,6,17.641,6,32c0,14.359,11.641,26,26,26s26-11.641,26-26C58,17.641,46.359,6,32,6z M45.121,28.121l-13,13 C31.535,41.707,30.768,42,30,42s-1.535-0.293-2.121-0.879l-8-8c-1.172-1.171-1.172-3.071,0-4.242c1.172-1.172,3.07-1.172,4.242,0 L30,34.758l10.879-10.879c1.172-1.172,3.07-1.172,4.242,0C46.293,25.05,46.293,26.95,45.121,28.121z" />
+                  </svg></span></a>
+              <div class="mt-2 font-light">
 
                 <?php echo $user['udescription'] ?>
                 <div class="mt-4 text-gray-700">
 
-                  <em><a href="<?php echo $user['url'] ?>" target="_blank"><?php echo $user['url'] ?></a></em>
+                  <em class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="mr-1"  viewBox="0 0 48 48" width="17px" height="17px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg><a href="<?php echo $user['url'] ?>" target="_blank"><?php echo $user['url'] ?></a></em>
                 </div>
               </div>
             </div>
@@ -671,7 +678,7 @@ include("config.php");
 <?php
   } else {
 ?>
-  
+
   <!-- Meta Tags -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="shortcut icon" href="<?php echo weburl; ?>/images/favicon.ico">
