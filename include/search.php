@@ -23,10 +23,10 @@ background: linear-gradient(344deg, rgba(161,54,130,1) 0%, rgba(88,48,179,1) 61%
  </section>
 
  <div class="container max-w-7xl py-4 px-7 mx-auto">
-   <div class="flex flex-row max-w-full justify-center mx-auto">
+   <div class="flex flex-row max-w-full justify-center mx-auto items-center">
      <div class="bg-red-600 rounded text-white font-bold my-0 align-start py-1 px-6 mx-0 max-w-7xl text-center">New</div>
      <div class="content-center">
-       <marquee class="align-center mt-2 mr-4 pb-1 shadow-lg" direction="scroll"><a href="<?php echo weburl;?>/#contact">Sale your final year project Code / Document send request at <b>rohitbhure.cse@gmail.com</b> or WhatsApp: <b>+91-8839178090</b></a></marquee>
+       <marquee class="align-center mt-2 mr-4 pb-1 shadow-xl" direction="scroll"><a href="<?php echo weburl;?>/#contact">Sale your final year project Code / Document send request at <b>rohitbhure.cse@gmail.com</b> or WhatsApp: <b>+91-8839178090</b></a></marquee>
      </div>
    </div>
  </div>
